@@ -170,10 +170,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d6d9dd;
+  background: #6b7280;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c1c6ca;
+  background: #4b5563;
 }

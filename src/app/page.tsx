@@ -1,3 +1,4 @@
+import { AboutUs } from '@/components/sections/about-us';
 import { CallToAction } from '@/components/sections/call-to-action';
 import { FeaturedProjects } from '@/components/sections/featured-projects';
 import { Hero } from '@/components/sections/hero';
@@ -21,6 +22,9 @@ export default function HomePage() {
     <div className="min-h-screen">
       {/* Hero Section - Full screen with parallax */}
       <Hero />
+      
+      {/* About Us Section */}
+      <AboutUs />
       
       {/* Services Overview */}
       <Services />

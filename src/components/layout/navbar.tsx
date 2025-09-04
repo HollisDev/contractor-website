@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const leftNavigation = [
-  { name: 'About', href: '/about' },
+  { name: 'About Us', href: '/about' },
   { name: 'Services', href: '/services' },
   { name: 'Testimonials', href: '/testimonials' },
 ];
@@ -38,17 +38,17 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 z-50 w-full backdrop-blur-lg border-b border-white/30 shadow-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.6)' }}>
+      <nav className="fixed top-0 z-50 w-full backdrop-blur-lg border-b bg-white border-white/10 shadow-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
         <div className="w-full px-8 sm:px-12 lg:px-16">
           <div className="flex justify-between items-center h-28 w-full relative">
             {/* Left Navigation - Push to far left */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden nav:flex items-center space-x-8">
               {leftNavigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'text-lg font-medium transition-colors hover:text-burgundy',
+                    'text-xl font-medium transition-colors hover:text-burgundy',
                     pathname === item.href
                       ? 'text-burgundy border-b-2 border-burgundy pb-1'
                       : 'text-black'
@@ -61,20 +61,20 @@ export function Navbar() {
 
             {/* Center Logo - Centered with maximum space */}
             <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-2xl lg:text-3xl font-bold text-burgundy leading-tight">
-                <div className="border-b-2 border-burgundy pb-1">Reputation Builders &</div>
+              <div className="text-2xl lg:text-3xl  text-burgundy leading-tight">
+                <div className="border-b-2 border-burgundy pb-1">Reputation Builders <span className="text-white">&</span></div>
                 <div className="text-xl lg:text-2xl pt-1">Handyman Services</div>
               </div>
             </Link>
 
             {/* Right Navigation - Push to far right */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden nav:flex items-center space-x-8">
               {rightNavigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'text-lg font-medium transition-colors hover:text-burgundy',
+                    'text-xl font-medium transition-colors hover:text-burgundy',
                     pathname === item.href
                       ? 'text-burgundy border-b-2 border-burgundy pb-1'
                       : 'text-black'
@@ -88,7 +88,7 @@ export function Navbar() {
               <Link
                 href="/contact"
                 className={cn(
-                  'border-2 border-burgundy text-burgundy px-4 py-2 text-lg font-medium hover:bg-burgundy hover:text-white transition-colors shadow-lg',
+                  'border-2 border-burgundy text-burgundy px-6 py-2 text-xl font-medium hover:bg-burgundy hover:text-white transition-colors shadow-lg',
                   pathname === '/contact' && 'bg-burgundy text-white'
                 )}
               >
@@ -97,7 +97,7 @@ export function Navbar() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="lg:hidden">
+            <div className="nav:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="p-2 rounded-md text-black hover:text-burgundy hover:bg-gray-100"
@@ -114,7 +114,7 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-200">
+          <div className="nav:hidden bg-white/95 backdrop-blur-md border-t border-gray-200">
             <div className="px-4 pt-2 pb-3 space-y-1">
               {[...leftNavigation, ...rightNavigation].map((item) => (
                 <Link
