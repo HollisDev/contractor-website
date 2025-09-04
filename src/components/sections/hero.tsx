@@ -71,24 +71,24 @@ export function Hero() {
         {/* Content - Centered */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-center text-center">
           <div className="max-w-5xl">
-          {/* Main Headline with Wave Animation */}
-          <div className="mb-8">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
-              <span className="block text-white">
-                {renderWaveText('Transform your ', 0)}
-                <span className="text-burgundy drop-shadow-md">
-                  {renderWaveText('Dream Space', 0)}
+            {/* Main Headline with Wave Animation */}
+            <div className="mb-8">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
+                <span className="block text-white">
+                  {renderWaveText('Transform your ', 0)}
+                  <span className="text-burgundy drop-shadow-md">
+                    {renderWaveText('Dream Space', 0)}
+                  </span>
                 </span>
-              </span>
-            </h1>
-            
-            {/* Subtitle with Wave Animation */}
-            <p className="text-xl sm:text-2xl text-white leading-relaxed drop-shadow-md max-w-4xl mx-auto">
-              <span className="block">
-                {renderWaveText('Premium kitchen, bathroom, general house remodeling with expert craftsmanship, innovative design, and unmatched attention to detail.', 1)}
-              </span>
-            </p>
-          </div>
+              </h1>
+              
+              {/* Subtitle with Wave Animation */}
+              <p className="text-xl sm:text-2xl text-white leading-relaxed drop-shadow-md max-w-4xl mx-auto">
+                <span className="block">
+                  {renderWaveText('Premium kitchen, bathroom, general house remodeling with expert craftsmanship, innovative design, and unmatched attention to detail.', 1)}
+                </span>
+              </p>
+            </div>
           </div>
         </div>
 
