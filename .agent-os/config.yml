@@ -1,0 +1,30 @@
+# Agent OS Configuration for Contractor Website
+project:
+  name: "contractor-website"
+  type: "nextjs-contractor-site"
+  version: "1.0.0"
+  
+tech_stack:
+  framework: "Next.js 14.2+"
+  language: "TypeScript"
+  styling: "Tailwind CSS 3.4+"
+  ui_library: "shadcn/ui"
+  animations: "Framer Motion 11+"
+  cms: "Sanity.io"
+  deployment: "Vercel"
+  
+standards:
+  - tech-stack.md
+  - code-style.md
+  - best-practices.md
+  
+features:
+  - homepage
+  - portfolio
+  - cost-estimator
+  - before-after-slider
+  - gallery-lightbox
+  - virtual-tours
+  - contact-forms
+  - blog
+  - testimonials
