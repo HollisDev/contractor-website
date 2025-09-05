@@ -47,6 +47,7 @@ export function Hero() {
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
         className={char === ' ' ? 'inline-block w-2' : 'inline-block'}
+        style={{ textAlign: 'inherit' }}
       >
         {char === ' ' ? '\u00A0' : char}
       </motion.span>
@@ -68,28 +69,34 @@ export function Hero() {
         
         <div className="relative z-50 flex h-full items-center justify-center pt-18">
           {/* Content - Centered */}
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-center text-center">
-            <div className="max-w-5xl">
+          <div className="w-full text-center px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto">
               {/* Main Headline with Wave Animation */}
               <div className="mb-8">
                 <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
-                  <span className="block text-white">
+                  <span className="block text-white text-center">
                     {renderWaveText('Transform Your ', 0)}
                   </span>
-                  <span className="block text-burgundy drop-shadow-md">
+                  <span className="block text-burgundy drop-shadow-md text-center">
                     {renderWaveText('Dream Space', 0, true)}
                   </span>
                 </h1>
                 
                 {/* Subtitle with Wave Animation */}
-                <p className="text-xl sm:text-2xl text-white leading-relaxed drop-shadow-md max-w-4xl mx-auto">
-                  <span className="block">
-                    {renderWaveText('Premium kitchen, bathroom, and general house remodeling with', 1)}
-                  </span>
-                  <span className="block">
-                    {renderWaveText('expert craftsmanship, innovative design, and unmatched attention to detail.', 1)}
-                  </span>
-                </p>
+                <div className="w-full flex justify-center">
+                  <div className="text-base sm:text-lg md:text-xl text-white leading-relaxed drop-shadow-md text-center max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-4xl">
+                    <div className="w-full flex justify-center mb-2">
+                      <span className="text-center">
+                        {renderWaveText('Premium kitchen, bathroom, and general house remodeling with', 1)}
+                      </span>
+                    </div>
+                    <div className="w-full flex justify-center">
+                      <span className="text-center">
+                        {renderWaveText('expert craftsmanship, innovative design, and unmatched attention to detail.', 1)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
