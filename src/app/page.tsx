@@ -8,13 +8,8 @@ import { WhyChooseUs } from '@/components/sections/why-choose-us';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Elite Home Remodeling | Transform Your Space with Expert Craftsmanship',
-  description: 'Premium kitchen and bathroom remodeling services. Transform your home with our expert craftsmanship, innovative design solutions, and unmatched attention to detail.',
-  openGraph: {
-    title: 'Elite Home Remodeling | Transform Your Space',
-    description: 'Premium kitchen and bathroom remodeling services with expert craftsmanship.',
-    images: ['/og-homepage.jpg'],
-  },
+  title: 'Reputation Builders & Handyman Services | Transform Your Dream Space',
+  description: 'Premier home remodeling and handyman services in Modesto, CA. Transform your home with our expert craftsmanship and innovative solutions.',
 };
 
 export default function HomePage() {
