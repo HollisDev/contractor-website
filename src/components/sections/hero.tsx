@@ -116,7 +116,6 @@ export function Hero() {
                 href="tel:2093124169" 
                 className="text-white hover:text-gray-200 transition-colors font-semibold text-lg sm:text-xl"
               >
-              >
                 Call Us: (209) 312-4169
               </a>
             </div>
