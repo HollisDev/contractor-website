@@ -1764,6 +1764,11 @@ html {
     grid-column: span 2 / span 2;
   }
 
+  .md\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .md\:mb-0 {
     margin-bottom: 0px;
   }
