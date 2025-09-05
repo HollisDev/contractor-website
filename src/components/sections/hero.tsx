@@ -72,12 +72,12 @@ export function Hero() {
             <div className="max-w-5xl">
               {/* Main Headline with Wave Animation */}
               <div className="mb-8">
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
+                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
                   <span className="block text-white">
-                    {renderWaveText('Transform your ', 0)}
-                    <span className="text-burgundy drop-shadow-md">
-                      {renderWaveText('Dream Space', 0, true)}
-                    </span>
+                    {renderWaveText('Transform Your ', 0)}
+                  </span>
+                  <span className="block text-burgundy drop-shadow-md">
+                    {renderWaveText('Dream Space', 0, true)}
                   </span>
                 </h1>
                 
@@ -105,16 +105,17 @@ export function Hero() {
         >
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row items-center justify-center text-center md:text-left space-y-3 md:space-y-0 md:space-x-8">
-              <div className="text-2xl text-white leading-tight">
+              <div className="text-lg sm:text-xl md:text-2xl text-white leading-tight">
                 <div className="border-b-2 border-white pb-1">Reputation Builders &</div>
-                <div className="text-xl pt-1">Handyman Services</div>
+                <div className="text-base sm:text-lg md:text-xl pt-1">Handyman Services</div>
               </div>
               <span className="hidden md:inline text-gray-200 text-4xl">|</span>
-              <span className="text-white text-xl">Schedule a Consultation</span>
+              <span className="text-white text-lg sm:text-xl">Schedule a Consultation</span>
               <span className="hidden md:inline text-gray-200 text-4xl">|</span>
               <a 
                 href="tel:2093124169" 
-                className="text-white hover:text-gray-200 transition-colors font-semibold text-xl"
+                className="text-white hover:text-gray-200 transition-colors font-semibold text-lg sm:text-xl"
+              >
               >
                 Call Us: (209) 312-4169
               </a>

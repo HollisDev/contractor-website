@@ -31,7 +31,7 @@ export function OurPromise() {
         className="max-w-3xl mx-auto text-center"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
         variants={containerVariants}
       >
         <motion.h3 

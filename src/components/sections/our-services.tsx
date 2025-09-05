@@ -63,13 +63,13 @@ export function OurServices() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={containerVariants}
         >
           
           {/* Left Column - Image Display */}
-          <motion.div className="relative" variants={itemVariants}>
-            <div className="relative h-[1000px] w-full rounded-2xl shadow-2xl overflow-hidden">
+          <motion.div className="relative order-2 lg:order-1" variants={itemVariants}>
+            <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[1000px] w-full rounded-2xl shadow-2xl overflow-hidden">
               <Image
                 src={services[currentImageIndex].image}
                 alt={services[currentImageIndex].title}
@@ -81,7 +81,7 @@ export function OurServices() {
           </motion.div>
 
           {/* Right Column - Content */}
-          <motion.div className="space-y-8" variants={itemVariants}>
+          <motion.div className="space-y-8 order-1 lg:order-2 text-center lg:text-left" variants={itemVariants}>
             {/* Section Header */}
             <div>
               <motion.h3 

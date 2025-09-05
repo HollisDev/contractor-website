@@ -61,9 +61,9 @@ export function Navbar() {
 
             {/* Center Logo - Centered with maximum space */}
             <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-3xl lg:text-4xl text-burgundy leading-tight">
+              <div className="text-lg xs:text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-burgundy leading-tight">
                 <div className="border-b-2 border-burgundy pb-1">Reputation Builders <span className="text-white" style={{ WebkitTextStroke: '1px #800020' }}>&</span></div>
-                <div className="text-2xl lg:text-3xl pt-1">Handyman Services</div>
+                <div className="text-base xs:text-lg sm:text-xl lg:text-2xl xl:text-3xl pt-1">Handyman Services</div>
               </div>
             </Link>
 

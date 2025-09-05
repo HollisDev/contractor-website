@@ -32,12 +32,12 @@ export function CallToAction() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={containerVariants}
         >
           
           {/* Left Column - Contact Info */}
-          <motion.div className="space-y-8" variants={itemVariants}>
+          <motion.div className="space-y-8 text-center lg:text-left" variants={itemVariants}>
             {/* Section Header */}
             <div>
               <motion.h3 
@@ -105,15 +105,14 @@ export function CallToAction() {
 
             {/* CTA Button */}
             <motion.div className="pt-8" variants={itemVariants}>
-              <a
-                href="tel:2093124169"
-                className="inline-flex items-center border-2 border-burgundy text-burgundy px-8 py-4 text-xl font-bold hover:bg-burgundy hover:text-white transition-colors shadow-lg rounded-lg"
+              <button
+                className="inline-flex items-center border-2 border-burgundy text-burgundy px-8 py-4 text-xl font-bold hover:bg-burgundy hover:text-white transition-colors shadow-lg rounded-lg cursor-default"
               >
                 Schedule Free Consultation
                 <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </a>
+              </button>
             </motion.div>
           </motion.div>
 

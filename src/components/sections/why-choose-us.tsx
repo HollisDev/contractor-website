@@ -76,7 +76,7 @@ export function WhyChooseUs() {
           className="text-center mb-20"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={containerVariants}
         >
           <motion.h3 

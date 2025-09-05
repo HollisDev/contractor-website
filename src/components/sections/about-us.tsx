@@ -39,11 +39,11 @@ export function AboutUs() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={containerVariants}
         >
           {/* Left Column */}
-          <motion.div variants={itemVariants}>
+          <motion.div className="text-center lg:text-left" variants={itemVariants}>
             <motion.p 
               className="text-gray-800 text-2xl mb-8"
               variants={itemVariants}
@@ -59,13 +59,13 @@ export function AboutUs() {
             
             {/* Decorative accent line */}
             <motion.div 
-              className="w-24 h-1 bg-burgundy mb-8"
+              className="w-24 h-1 bg-burgundy mb-8 mx-auto lg:mx-0"
               variants={itemVariants}
             ></motion.div>
           </motion.div>
           
           {/* Right Column */}
-          <motion.div className="space-y-6" variants={itemVariants}>
+          <motion.div className="space-y-6 text-center lg:text-left" variants={itemVariants}>
             <motion.div 
               className="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500"
               variants={itemVariants}
