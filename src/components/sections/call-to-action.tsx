@@ -1,29 +1,68 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export function CallToAction() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <section id="contact" className="bg-white py-48 px-4 sm:px-6 lg:px-8">
       <div className="max-w-none mx-auto px-8 sm:px-12 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <motion.div 
+          className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={containerVariants}
+        >
           
           {/* Left Column - Contact Info */}
-          <div className="space-y-8">
+          <motion.div className="space-y-8" variants={itemVariants}>
             {/* Section Header */}
             <div>
-              <h3 className="text-2xl font-medium text-black mb-6 tracking-wide">
+              <motion.h3 
+                className="text-2xl font-medium text-black mb-6 tracking-wide"
+                variants={itemVariants}
+              >
                 Get in Touch
-              </h3>
-              <h2 className="text-5xl lg:text-7xl text-burgundy leading-tight mb-12">
+              </motion.h3>
+              <motion.h2 
+                className="text-5xl lg:text-7xl text-burgundy leading-tight mb-12"
+                variants={itemVariants}
+              >
                 Ready to Transform<br />Your Space?
-              </h2>
-              <p className="text-xl text-gray-700 leading-relaxed mb-12">
+              </motion.h2>
+              <motion.p 
+                className="text-xl text-gray-700 leading-relaxed mb-12"
+                variants={itemVariants}
+              >
                 Let's discuss your vision and create something extraordinary together. 
                 Contact us today for your free consultation.
-              </p>
+              </motion.p>
             </div>
 
             {/* Contact Details */}
-            <div className="space-y-8">
+            <motion.div className="space-y-8" variants={itemVariants}>
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-burgundy rounded-full flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,10 +101,10 @@ export function CallToAction() {
                   <p className="text-xl font-bold text-burgundy">Mon-Fri: 7AM-6PM</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* CTA Button */}
-            <div className="pt-8">
+            <motion.div className="pt-8" variants={itemVariants}>
               <a
                 href="tel:2093124169"
                 className="inline-flex items-center border-2 border-burgundy text-burgundy px-8 py-4 text-xl font-bold hover:bg-burgundy hover:text-white transition-colors shadow-lg rounded-lg"
@@ -75,11 +114,11 @@ export function CallToAction() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Column - Map */}
-          <div className="relative">
+          <motion.div className="relative" variants={itemVariants}>
             <div className="h-[600px] w-full rounded-2xl shadow-2xl overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50449.779176916046!2d-121.02799845!3d37.6390972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8090978f7b44c0b1%3A0x2b1a8560dd0c9a4a!2sModesto%2C%20CA%2095355!5e0!3m2!1sen!2sus!4v1625097600000!5m2!1sen!2sus"
@@ -98,8 +137,8 @@ export function CallToAction() {
               <h4 className="text-lg font-bold text-burgundy mb-1">Our Service Area</h4>
               <p className="text-gray-700">Modesto, CA 95355 & Surrounding Communities</p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

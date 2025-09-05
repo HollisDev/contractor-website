@@ -1,10 +1,33 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 
 export function OurServices() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
 
   const services = [
     {
@@ -36,10 +59,16 @@ export function OurServices() {
   return (
     <section id="our-services" className="bg-white py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-none mx-auto px-8 sm:px-12 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <motion.div 
+          className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={containerVariants}
+        >
           
           {/* Left Column - Image Display */}
-          <div className="relative">
+          <motion.div className="relative" variants={itemVariants}>
             <div className="relative h-[1000px] w-full rounded-2xl shadow-2xl overflow-hidden">
               <Image
                 src={services[currentImageIndex].image}
@@ -49,25 +78,34 @@ export function OurServices() {
                 priority
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column - Content */}
-          <div className="space-y-8">
+          <motion.div className="space-y-8" variants={itemVariants}>
             {/* Section Header */}
             <div>
-              <h3 className="text-2xl font-medium text-black mb-6 tracking-wide">
+              <motion.h3 
+                className="text-2xl font-medium text-black mb-6 tracking-wide"
+                variants={itemVariants}
+              >
                 Our Services
-              </h3>
-              <h2 className="text-4xl lg:text-6xl text-burgundy leading-tight mb-8">
+              </motion.h3>
+              <motion.h2 
+                className="text-4xl lg:text-6xl text-burgundy leading-tight mb-8"
+                variants={itemVariants}
+              >
                 Elevating Your Living Space, Enhancing Your Quality of Life
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-12">
+              </motion.h2>
+              <motion.p 
+                className="text-lg text-gray-700 leading-relaxed mb-12"
+                variants={itemVariants}
+              >
                 Fusing the disciplines of design and construction into one design-build company in Modesto assures that we achieve your vision, time, cost, and quality expectations.
-              </p>
+              </motion.p>
             </div>
 
             {/* Services List */}
-            <div className="space-y-0">
+            <motion.div className="space-y-0" variants={itemVariants}>
               {/* Instruction Message */}
               <div className="mb-8">
                 <p className="text-gray-500 text-sm italic">
@@ -90,9 +128,9 @@ export function OurServices() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

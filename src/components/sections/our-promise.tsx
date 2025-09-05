@@ -1,15 +1,56 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export function OurPromise() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <section id="our-promise" className="bg-gray-50 px-4 sm:px-6 lg:px-8" style={{ paddingTop: '136px', paddingBottom: '64px' }}>
-      <div className="max-w-3xl mx-auto text-center">
-        <h3 className="text-xl font-medium text-black mb-4 tracking-wide uppercase">
+      <motion.div 
+        className="max-w-3xl mx-auto text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={containerVariants}
+      >
+        <motion.h3 
+          className="text-xl font-medium text-black mb-4 tracking-wide uppercase"
+          variants={itemVariants}
+        >
           Our Promise
-        </h3>
-        <h2 className="text-3xl lg:text-4xl text-burgundy leading-tight mb-8">
+        </motion.h3>
+        <motion.h2 
+          className="text-3xl lg:text-4xl text-burgundy leading-tight mb-8"
+          variants={itemVariants}
+        >
           Here's the Thing
-        </h2>
+        </motion.h2>
         
-        <div className="text-lg text-black leading-relaxed space-y-6 max-w-2xl mx-auto">
+        <motion.div 
+          className="text-lg text-black leading-relaxed space-y-6 max-w-2xl mx-auto"
+          variants={itemVariants}
+        >
           <p>
             We've been at this for twenty-three years now. Long enough to know that promises in this business 
             are like campaign speeches—everybody makes them, not everybody keeps them.
@@ -28,8 +69,8 @@ export function OurPromise() {
           <p className="text-burgundy font-medium italic">
             That's it. That's the promise.
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

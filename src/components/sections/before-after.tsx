@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
@@ -7,6 +8,28 @@ export function BeforeAfter() {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
@@ -66,20 +89,32 @@ export function BeforeAfter() {
   return (
     <section id="before-after" className="bg-gray-50 px-4 sm:px-6 lg:px-8" style={{ paddingTop: '144px', paddingBottom: '96px' }}>
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl text-burgundy mb-6">
-            Our Transformations
-          </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            See the dramatic difference our expert craftsmanship makes. 
-            Drag the slider to reveal stunning before and after results.
-          </p>
-        </div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={containerVariants}
+        >
+          {/* Section Header */}
+          <motion.div className="text-center mb-16" variants={itemVariants}>
+            <motion.h2 
+              className="text-4xl lg:text-5xl text-burgundy mb-6"
+              variants={itemVariants}
+            >
+              Our Transformations
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-700 max-w-3xl mx-auto"
+              variants={itemVariants}
+            >
+              See the dramatic difference our expert craftsmanship makes. 
+              Drag the slider to reveal stunning before and after results.
+            </motion.p>
+          </motion.div>
 
-        {/* Before/After Slider */}
-        <div className="relative mx-auto max-w-6xl">
-          <div
+          {/* Before/After Slider */}
+          <motion.div className="relative mx-auto max-w-6xl" variants={itemVariants}>
+            <div
             ref={containerRef}
             className="relative overflow-hidden rounded-xl shadow-2xl cursor-grab active:cursor-grabbing select-none"
             style={{ 
@@ -151,14 +186,15 @@ export function BeforeAfter() {
           </div>
 
           {/* Instructions */}
-          <div className="text-center mt-6">
+          <motion.div className="text-center mt-6" variants={itemVariants}>
             <p className="text-gray-600">
               <span className="inline-block mr-2">←</span>
               Drag the slider to see the transformation
               <span className="inline-block ml-2">→</span>
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
+        </motion.div>
       </div>
     </section>
   );

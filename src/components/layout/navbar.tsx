@@ -7,14 +7,14 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const leftNavigation = [
-  { name: 'About Us', href: '/about' },
-  { name: 'Services', href: '/services' },
-  { name: 'Testimonials', href: '/testimonials' },
+  { name: 'About Us', href: '#about-us' },
+  { name: 'Services', href: '#our-services' },
+  { name: 'Before & After', href: '#before-after' },
 ];
 
 const rightNavigation = [
-  { name: 'Process', href: '/process' },
-  { name: 'Portfolio', href: '/portfolio' },
+  { name: 'Why Choose Us', href: '#why-choose-us' },
+  { name: 'Our Promise', href: '#our-promise' },
 ];
 
 export function Navbar() {
@@ -61,9 +61,9 @@ export function Navbar() {
 
             {/* Center Logo - Centered with maximum space */}
             <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-2xl lg:text-3xl  text-burgundy leading-tight">
-                <div className="border-b-2 border-burgundy pb-1">Reputation Builders <span className="text-white">&</span></div>
-                <div className="text-xl lg:text-2xl pt-1">Handyman Services</div>
+              <div className="text-3xl lg:text-4xl text-burgundy leading-tight">
+                <div className="border-b-2 border-burgundy pb-1">Reputation Builders <span className="text-white" style={{ WebkitTextStroke: '1px #800020' }}>&</span></div>
+                <div className="text-2xl lg:text-3xl pt-1">Handyman Services</div>
               </div>
             </Link>
 
@@ -88,7 +88,7 @@ export function Navbar() {
               <Link
                 href="/contact"
                 className={cn(
-                  'border-2 border-burgundy text-burgundy px-6 py-2 text-xl font-medium hover:bg-burgundy hover:text-white transition-colors shadow-lg',
+                  'border-2 border-burgundy text-burgundy px-6 py-2 text-xl font-medium hover:bg-burgundy hover:text-white transition-colors shadow-lg rounded-md',
                   pathname === '/contact' && 'bg-burgundy text-white'
                 )}
               >
@@ -135,7 +135,7 @@ export function Navbar() {
               <Link
                 href="/contact"
                 className={cn(
-                  'block border-2 border-burgundy text-burgundy px-3 py-2 rounded-md text-lg font-medium hover:bg-burgundy hover:text-white transition-colors mt-4',
+                  'block border-2 border-burgundy text-burgundy px-3 py-2 rounded-xl text-lg font-medium hover:bg-burgundy hover:text-white transition-colors mt-4',
                   pathname === '/contact' && 'bg-burgundy text-white'
                 )}
                 onClick={() => setIsOpen(false)}

@@ -1,9 +1,9 @@
 import { AboutUs } from '@/components/sections/about-us';
+import { BeforeAfter } from '@/components/sections/before-after';
 import { CallToAction } from '@/components/sections/call-to-action';
-import { FeaturedProjects } from '@/components/sections/featured-projects';
 import { Hero } from '@/components/sections/hero';
-import { Services } from '@/components/sections/services';
-import { Testimonials } from '@/components/sections/testimonials';
+import { OurPromise } from '@/components/sections/our-promise';
+import { OurServices } from '@/components/sections/our-services';
 import { WhyChooseUs } from '@/components/sections/why-choose-us';
 import { Metadata } from 'next';
 
@@ -26,17 +26,17 @@ export default function HomePage() {
       {/* About Us Section */}
       <AboutUs />
       
-      {/* Services Overview */}
-      <Services />
+      {/* Before & After Transformations */}
+      <BeforeAfter />
       
-      {/* Featured Projects */}
-      <FeaturedProjects />
+      {/* Our Services with Image Scroller */}
+      <OurServices />
       
       {/* Why Choose Us */}
       <WhyChooseUs />
       
-      {/* Testimonials */}
-      <Testimonials />
+      {/* Our Promise */}
+      <OurPromise />
       
       {/* Call to Action */}
       <CallToAction />
