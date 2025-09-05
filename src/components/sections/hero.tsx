@@ -1,7 +1,7 @@
 'use client';
 
+import { ImagesSlider } from "@/components/ui/images-slider";
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export function Hero() {
@@ -10,6 +10,15 @@ export function Hero() {
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  // Hero images for the carousel
+  const heroImages = [
+    "/image-assets/hero-living-room-image.jpg",
+    "/image-assets/hero-kitchen-image.jpg", 
+    "/image-assets/hero-bathroom-image.jpg",
+    "/image-assets/hero-backyard-image.jpg",
+    "/image-assets/hero-backyard-pool-image.jpg"
+  ];
 
   // Animation variants for the wave effect - all lines wave simultaneously
   const letterVariants = {
@@ -46,56 +55,52 @@ export function Hero() {
 
   return (
     <div className="relative">
-      {/* Hero Section with attached grey bar */}
-      <section className="relative h-[110vh] flex items-center overflow-hidden pt-18">
-        {/* Background Image - NO parallax */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute -inset-8 z-0">
-            <Image
-              src="/images/hero/bathroom-remodel.jpg"
-              alt="Premium bathroom renovation"
-              fill
-              className="object-cover object-center scale-125"
-              priority
-            />
-          </div>
-          {/* Semi-transparent overlay to make text pop */}
-          <div className="absolute -inset-8 bg-black/40" />
-        </div>
-
-        {/* Content - Centered */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-center text-center">
-          <div className="max-w-5xl">
-            {/* Main Headline with Wave Animation */}
-            <div className="mb-8">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
-                <span className="block text-white">
-                  {renderWaveText('Transform your ', 0)}
-                  <span className="text-burgundy drop-shadow-md">
-                    {renderWaveText('Dream Space', 0, true)}
+      {/* Hero Section with Image Carousel */}
+      <ImagesSlider
+        className="h-[110vh]"
+        images={heroImages}
+        overlay={false}
+        autoplay={true}
+        direction="up"
+      >
+        {/* Semi-transparent overlay to make text pop */}
+        <div className="absolute inset-0 bg-black/40 z-40" />
+        
+        <div className="relative z-50 flex h-full items-center justify-center pt-18">
+          {/* Content - Centered */}
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center justify-center text-center">
+            <div className="max-w-5xl">
+              {/* Main Headline with Wave Animation */}
+              <div className="mb-8">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
+                  <span className="block text-white">
+                    {renderWaveText('Transform your ', 0)}
+                    <span className="text-burgundy drop-shadow-md">
+                      {renderWaveText('Dream Space', 0, true)}
+                    </span>
                   </span>
-                </span>
-              </h1>
-              
-              {/* Subtitle with Wave Animation */}
-              <p className="text-xl sm:text-2xl text-white leading-relaxed drop-shadow-md max-w-4xl mx-auto">
-                <span className="block">
-                  {renderWaveText('Premium kitchen, bathroom, and general house remodeling with', 1)}
-                </span>
-                <span className="block">
-                  {renderWaveText('expert craftsmanship, innovative design, and unmatched attention to detail.', 1)}
-                </span>
-              </p>
+                </h1>
+                
+                {/* Subtitle with Wave Animation */}
+                <p className="text-xl sm:text-2xl text-white leading-relaxed drop-shadow-md max-w-4xl mx-auto">
+                  <span className="block">
+                    {renderWaveText('Premium kitchen, bathroom, and general house remodeling with', 1)}
+                  </span>
+                  <span className="block">
+                    {renderWaveText('expert craftsmanship, innovative design, and unmatched attention to detail.', 1)}
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Grey Bar - Attached to bottom of hero section */}
+        {/* Grey Bar - Positioned at bottom of slider */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="absolute bottom-0 left-0 right-0 z-30 text-white py-6 px-4 sm:px-6 lg:px-8"
+          className="absolute bottom-0 left-0 right-0 z-50 text-white py-6 px-4 sm:px-6 lg:px-8"
           style={{ backgroundColor: '#58595b' }}
         >
           <div className="max-w-7xl mx-auto">
@@ -116,7 +121,7 @@ export function Hero() {
             </div>
           </div>
         </motion.div>
-      </section>
+      </ImagesSlider>
     </div>
   );
 }

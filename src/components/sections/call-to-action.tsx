@@ -1,308 +1,105 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import {
-    ArrowRight,
-    Calendar,
-    CheckCircle,
-    Clock,
-    Mail,
-    Phone,
-    Star
-} from 'lucide-react';
-import { useState } from 'react';
-
-const ctaSteps = [
-  {
-    number: '01',
-    title: 'Free Consultation',
-    description: 'Schedule a complimentary in-home consultation to discuss your vision and goals.',
-    icon: Calendar
-  },
-  {
-    number: '02',
-    title: 'Custom Design',
-    description: 'Our design team creates detailed plans and 3D renderings tailored to your style.',
-    icon: Star
-  },
-  {
-    number: '03',
-    title: 'Expert Execution',
-    description: 'Our skilled craftsmen bring your dream space to life with precision and care.',
-    icon: CheckCircle
-  }
-];
-
 export function CallToAction() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    projectType: '',
-    message: ''
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-  };
-
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-emerald-900 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-            Ready to Transform{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-              Your Space?
-            </span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
-            Take the first step toward your dream renovation. Get a free consultation 
-            and detailed estimate from Southern California's premier remodeling experts.
-          </p>
-
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            {[
-              { value: '24-48hrs', label: 'Response Time' },
-              { value: 'Free', label: 'Consultation' },
-              { value: '15+ Years', label: 'Experience' },
-              { value: '5★ Rating', label: 'Reviews' }
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="text-2xl lg:text-3xl font-bold text-white mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-gray-400 text-sm">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Contact Form and Info Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20"
-          >
-            <h3 className="text-2xl font-bold text-white mb-6">Get Your Free Estimate</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
-                    required
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors"
-                  />
-                </div>
-                <div>
-                  <select
-                    name="projectType"
-                    value={formData.projectType}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-blue-400 transition-colors"
-                    required
-                  >
-                    <option value="">Project Type</option>
-                    <option value="kitchen">Kitchen Remodeling</option>
-                    <option value="bathroom">Bathroom Renovation</option>
-                    <option value="addition">Home Addition</option>
-                    <option value="whole-home">Whole Home Remodel</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <textarea
-                  name="message"
-                  placeholder="Tell us about your project..."
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  rows={4}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors resize-none"
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-blue-600 to-emerald-600 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-emerald-700 transition-all duration-300 flex items-center justify-center space-x-2"
-              >
-                <span>Get Free Estimate</span>
-                <ArrowRight className="h-5 w-5" />
-              </motion.button>
-            </form>
-          </motion.div>
-
-          {/* Contact Info and Process */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            {/* Contact Info */}
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
-              
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-xl flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold">(555) 123-4567</div>
-                    <div className="text-gray-400 text-sm">Call or text anytime</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-xl flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold">info@eliteremodeling.com</div>
-                    <div className="text-gray-400 text-sm">We respond within 2 hours</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-xl flex items-center justify-center">
-                    <Clock className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold">Mon - Sat: 7AM - 7PM</div>
-                    <div className="text-gray-400 text-sm">Emergency service available</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Process Steps */}
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-white mb-6">Our Simple Process</h3>
-              
-              {ctaSteps.map((step, index) => {
-                const Icon = step.icon;
-                return (
-                  <motion.div
-                    key={step.number}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                    viewport={{ once: true }}
-                    className="flex items-start space-x-4"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Icon className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-white font-bold text-lg mb-1">{step.title}</div>
-                      <div className="text-gray-400">{step.description}</div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <p className="text-lg text-gray-300 mb-8">
-            Join hundreds of satisfied homeowners who trusted us with their dream renovation.
-          </p>
+    <section id="contact" className="bg-white py-48 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-none mx-auto px-8 sm:px-12 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors"
-            >
-              Call Now: (555) 123-4567
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-colors"
-            >
-              View Our Portfolio
-            </motion.button>
+          {/* Left Column - Contact Info */}
+          <div className="space-y-8">
+            {/* Section Header */}
+            <div>
+              <h3 className="text-2xl font-medium text-black mb-6 tracking-wide">
+                Get in Touch
+              </h3>
+              <h2 className="text-5xl lg:text-7xl text-burgundy leading-tight mb-12">
+                Ready to Transform<br />Your Space?
+              </h2>
+              <p className="text-xl text-gray-700 leading-relaxed mb-12">
+                Let's discuss your vision and create something extraordinary together. 
+                Contact us today for your free consultation.
+              </p>
+            </div>
+
+            {/* Contact Details */}
+            <div className="space-y-8">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-burgundy rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-lg font-semibold text-gray-900">Call Us Today</p>
+                  <a href="tel:2093124169" className="text-xl font-bold text-burgundy hover:text-red-800 transition-colors">
+                    (209) 312-4169
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-burgundy rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-lg font-semibold text-gray-900">Service Area</p>
+                  <p className="text-xl font-bold text-burgundy">Modesto, CA & Surrounding Areas</p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-burgundy rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-lg font-semibold text-gray-900">Business Hours</p>
+                  <p className="text-xl font-bold text-burgundy">Mon-Fri: 7AM-6PM</p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <div className="pt-8">
+              <a
+                href="tel:2093124169"
+                className="inline-flex items-center border-2 border-burgundy text-burgundy px-8 py-4 text-xl font-bold hover:bg-burgundy hover:text-white transition-colors shadow-lg rounded-lg"
+              >
+                Schedule Free Consultation
+                <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
           </div>
-        </motion.div>
+
+          {/* Right Column - Map */}
+          <div className="relative">
+            <div className="h-[600px] w-full rounded-2xl shadow-2xl overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50449.779176916046!2d-121.02799845!3d37.6390972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8090978f7b44c0b1%3A0x2b1a8560dd0c9a4a!2sModesto%2C%20CA%2095355!5e0!3m2!1sen!2sus!4v1625097600000!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Modesto, CA 95355 Service Area"
+              ></iframe>
+            </div>
+            
+            {/* Map Overlay Info */}
+            <div className="absolute bottom-6 left-6 bg-white bg-opacity-95 backdrop-blur-sm px-6 py-4 rounded-lg shadow-lg">
+              <h4 className="text-lg font-bold text-burgundy mb-1">Our Service Area</h4>
+              <p className="text-gray-700">Modesto, CA 95355 & Surrounding Communities</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
