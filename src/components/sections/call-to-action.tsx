@@ -37,9 +37,9 @@ export function CallToAction() {
         >
           
           {/* Left Column - Contact Info */}
-          <motion.div className="space-y-8 text-center lg:text-left" variants={itemVariants}>
+          <motion.div className="space-y-8" variants={itemVariants}>
             {/* Section Header */}
-            <div>
+            <div className="text-center">
               <motion.h3 
                 className="text-2xl font-medium text-black mb-6 tracking-wide"
                 variants={itemVariants}
@@ -47,7 +47,7 @@ export function CallToAction() {
                 Get in Touch
               </motion.h3>
               <motion.h2 
-                className="text-5xl lg:text-7xl text-burgundy leading-tight mb-12"
+                className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl text-black leading-tight mb-12"
                 variants={itemVariants}
               >
                 Ready to Transform<br />Your Space?
@@ -64,21 +64,21 @@ export function CallToAction() {
             {/* Contact Details */}
             <motion.div className="space-y-8" variants={itemVariants}>
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-burgundy rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
                 <div>
                   <p className="text-lg font-semibold text-gray-900">Call Us Today</p>
-                  <a href="tel:2093124169" className="text-xl font-bold text-burgundy hover:text-red-800 transition-colors">
+                  <a href="tel:2093124169" className="text-xl font-bold text-black hover:text-red-800 transition-colors">
                     (209) 312-4169
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-burgundy rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -86,19 +86,19 @@ export function CallToAction() {
                 </div>
                 <div>
                   <p className="text-lg font-semibold text-gray-900">Service Area</p>
-                  <p className="text-xl font-bold text-burgundy">Modesto, CA & Surrounding Areas</p>
+                  <p className="text-xl font-bold text-black">Modesto, CA & Surrounding Areas</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-burgundy rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
                   <p className="text-lg font-semibold text-gray-900">Business Hours</p>
-                  <p className="text-xl font-bold text-burgundy">Mon-Fri: 7AM-6PM</p>
+                  <p className="text-xl font-bold text-black">Mon-Fri: 7AM-6PM</p>
                 </div>
               </div>
             </motion.div>
@@ -106,7 +106,7 @@ export function CallToAction() {
             {/* CTA Button */}
             <motion.div className="pt-8" variants={itemVariants}>
               <button
-                className="inline-flex items-center border-2 border-burgundy text-burgundy px-8 py-4 text-xl font-bold hover:bg-burgundy hover:text-white transition-colors shadow-lg rounded-lg cursor-default"
+                className="inline-flex items-center border-2 border-black text-black px-8 py-4 text-xl font-bold hover:bg-gray-800 hover:text-white transition-colors shadow-lg rounded-lg cursor-default"
               >
                 Schedule Free Consultation
                 <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,7 +133,7 @@ export function CallToAction() {
             
             {/* Map Overlay Info */}
             <div className="absolute bottom-6 left-6 bg-white bg-opacity-95 backdrop-blur-sm px-6 py-4 rounded-lg shadow-lg">
-              <h4 className="text-lg font-bold text-burgundy mb-1">Our Service Area</h4>
+              <h4 className="text-lg font-bold text-black mb-1">Our Service Area</h4>
               <p className="text-gray-700">Modesto, CA 95355 & Surrounding Communities</p>
             </div>
           </motion.div>

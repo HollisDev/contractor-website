@@ -65,9 +65,9 @@ export function WhyChooseUs() {
     <section id="why-choose-us" className="relative bg-gray-50 pt-48 pb-56 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5">
-        <div className="absolute top-32 left-16 w-24 h-24 bg-burgundy rounded-full"></div>
-        <div className="absolute bottom-64 right-24 w-32 h-32 bg-burgundy rounded-full"></div>
-        <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-burgundy rounded-full"></div>
+        <div className="absolute top-32 left-16 w-24 h-24 bg-gray-800 rounded-full"></div>
+        <div className="absolute bottom-64 right-24 w-32 h-32 bg-gray-800 rounded-full"></div>
+        <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-gray-800 rounded-full"></div>
       </div>
 
       <div className="max-w-none mx-auto px-8 sm:px-12 lg:px-16 relative z-10">
@@ -86,7 +86,7 @@ export function WhyChooseUs() {
             Why Choose Us
           </motion.h3>
           <motion.h2 
-            className="text-5xl lg:text-7xl text-burgundy leading-tight mb-8 max-w-4xl mx-auto"
+            className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl text-black leading-tight mb-8 max-w-4xl mx-auto"
             variants={itemVariants}
           >
             Excellence in Every Detail
@@ -95,7 +95,7 @@ export function WhyChooseUs() {
             className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
             variants={itemVariants}
           >
-            When you choose Reputation Builders & Handyman Services, you're choosing a team 
+            When you choose Reputation Builders, you're choosing a team 
             that's committed to transforming your vision into reality with unmatched expertise.
           </motion.p>
         </motion.div>
@@ -111,13 +111,13 @@ export function WhyChooseUs() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className={`group relative p-8 rounded-2xl transition-all duration-500 cursor-pointer ${
+              className={`group relative p-8 rounded-2xl border-l-4 border-black transition-all duration-500 cursor-pointer ${
                 hoveredFeature === index 
                   ? 'text-white shadow-2xl scale-105' 
                   : 'bg-white hover:bg-gray-50 shadow-lg'
               }`}
               style={{
-                backgroundColor: hoveredFeature === index ? 'rgba(128, 0, 32, 0.15)' : undefined
+                backgroundColor: hoveredFeature === index ? 'rgba(0, 0, 0, 0.15)' : undefined
               }}
               variants={itemVariants}
               onMouseEnter={() => setHoveredFeature(index)}
@@ -131,7 +131,7 @@ export function WhyChooseUs() {
 
               {/* Content */}
               <h4 className={`text-xl font-bold mb-4 transition-colors duration-500 ${
-                hoveredFeature === index ? 'text-burgundy' : 'text-burgundy'
+                hoveredFeature === index ? 'text-black' : 'text-black'
               }`}>
                 {feature.title}
               </h4>
@@ -144,7 +144,7 @@ export function WhyChooseUs() {
 
               {/* Decorative corner */}
               <div className={`absolute top-4 right-4 w-8 h-8 transition-all duration-500 ${
-                hoveredFeature === index ? 'bg-burgundy opacity-20' : 'bg-burgundy opacity-5'
+                hoveredFeature === index ? 'bg-gray-800 opacity-20' : 'bg-gray-800 opacity-5'
               } rounded-full`}></div>
             </motion.div>
           ))}
@@ -159,8 +159,7 @@ export function WhyChooseUs() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-center text-center md:text-left space-y-3 md:space-y-0 md:space-x-8">
             <div className="text-2xl text-white leading-tight">
-              <div className="border-b-2 border-white pb-1">Reputation Builders &</div>
-              <div className="text-xl pt-1">Handyman Services</div>
+              Reputation Builders
             </div>
             <span className="hidden md:inline text-gray-200 text-4xl">|</span>
             <span className="text-white text-xl">Schedule a Consultation</span>

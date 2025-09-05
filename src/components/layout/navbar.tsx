@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { ArrowUp, Menu, X } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -10,9 +11,11 @@ const leftNavigation = [
   { name: 'About Us', href: '#about-us' },
   { name: 'Services', href: '#our-services' },
   { name: 'Before & After', href: '#before-after' },
+  { name: 'Our Process', href: '#process-timeline' },
 ];
 
 const rightNavigation = [
+  { name: 'Gallery', href: '#project-gallery' },
   { name: 'Why Choose Us', href: '#why-choose-us' },
   { name: 'Our Promise', href: '#our-promise' },
 ];
@@ -38,7 +41,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 z-50 w-full backdrop-blur-lg border-b bg-white border-white/10 shadow-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+      <nav className="fixed top-0 z-50 w-full backdrop-blur-lg border-b bg-white border-white/10 shadow-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
         <div className="w-full px-8 sm:px-12 lg:px-16">
           <div className="flex justify-between items-center h-28 w-full relative">
             {/* Left Navigation - Push to far left */}
@@ -48,9 +51,9 @@ export function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'text-xl font-medium transition-colors hover:text-burgundy',
+                    'text-xl font-medium transition-all duration-200 hover:bg-gray-100 px-3 py-2 rounded-md',
                     pathname === item.href
-                      ? 'text-burgundy border-b-2 border-burgundy pb-1'
+                      ? 'text-black border-b-2 border-black pb-1'
                       : 'text-black'
                   )}
                 >
@@ -61,9 +64,17 @@ export function Navbar() {
 
             {/* Center Logo - Centered with maximum space */}
             <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-lg xs:text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-burgundy leading-tight">
-                <div className="border-b-2 border-burgundy pb-1">Reputation Builders <span className="text-white" style={{ WebkitTextStroke: '1px #800020' }}>&</span></div>
-                <div className="text-base xs:text-lg sm:text-xl lg:text-2xl xl:text-3xl pt-1">Handyman Services</div>
+              <div className="flex flex-col items-center">
+                <Image
+                  src="/image-assets/nav-bar/measuring-tape.png"
+                  alt="Measuring Tape"
+                  width={330}
+                  height={100}
+                  className="mb-2 -mt-2"
+                />
+                <div className="text-lg xs:text-xl sm:text-2xl lg:text-3xl xl:text-3xl text-black leading-tight font-bold -mt-6 mb-1">
+                  Reputation Builders
+                </div>
               </div>
             </Link>
 
@@ -74,9 +85,9 @@ export function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'text-xl font-medium transition-colors hover:text-burgundy',
+                    'text-xl font-medium transition-all duration-200 hover:bg-gray-100 px-3 py-2 rounded-md',
                     pathname === item.href
-                      ? 'text-burgundy border-b-2 border-burgundy pb-1'
+                      ? 'text-black border-b-2 border-black pb-1'
                       : 'text-black'
                   )}
                 >
@@ -86,10 +97,10 @@ export function Navbar() {
               
               {/* Contact Us Button */}
               <Link
-                href="/contact"
+                href="#contact"
                 className={cn(
-                  'border-2 border-burgundy text-burgundy px-6 py-2 text-xl font-medium hover:bg-burgundy hover:text-white transition-colors shadow-lg rounded-md',
-                  pathname === '/contact' && 'bg-burgundy text-white'
+                  'border-2 border-black text-black px-6 py-2 text-xl font-medium hover:bg-black hover:text-white transition-colors shadow-lg rounded-md',
+                  pathname === '#contact' && 'bg-black text-white'
                 )}
               >
                 Contact Us
@@ -100,7 +111,7 @@ export function Navbar() {
             <div className="nav:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-md text-black hover:text-burgundy hover:bg-gray-100"
+                className="p-2 rounded-md text-black hover:text-black hover:bg-gray-100"
               >
                 {isOpen ? (
                   <X className="h-6 w-6" />
@@ -123,8 +134,8 @@ export function Navbar() {
                   className={cn(
                     'block px-3 py-2 rounded-md text-lg font-medium transition-colors',
                     pathname === item.href
-                      ? 'bg-red-100 text-burgundy'
-                      : 'text-black hover:bg-gray-100 hover:text-burgundy'
+                      ? 'bg-gray-100 text-black'
+                      : 'text-black hover:bg-gray-100 hover:text-black'
                   )}
                   onClick={() => setIsOpen(false)}
                 >
@@ -135,8 +146,8 @@ export function Navbar() {
               <Link
                 href="/contact"
                 className={cn(
-                  'block border-2 border-burgundy text-burgundy px-3 py-2 rounded-xl text-lg font-medium hover:bg-burgundy hover:text-white transition-colors mt-4',
-                  pathname === '/contact' && 'bg-burgundy text-white'
+                  'block border-2 border-black text-black px-3 py-2 rounded-xl text-lg font-medium hover:bg-black hover:text-white transition-colors mt-4',
+                  pathname === '/contact' && 'bg-black text-white'
                 )}
                 onClick={() => setIsOpen(false)}
               >
@@ -153,7 +164,7 @@ export function Navbar() {
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:shadow-xl transition-all duration-300 group"
         >
-          <ArrowUp className="h-6 w-6 text-burgundy group-hover:text-red-800" />
+          <ArrowUp className="h-6 w-6 text-black group-hover:text-gray-800" />
         </button>
       )}
     </>

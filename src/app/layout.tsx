@@ -8,8 +8,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Reputation Builders & Handyman Services',
-  description: 'Premier home remodeling and handyman services in Modesto, CA. Transform your home with our expert craftsmanship.',
+  title: 'Reputation Builders',
+  description: 'Premier home remodeling service in Modesto, CA. Transform your home with our expert craftsmanship.',
   icons: {
     icon: '/favicon.svg',
   },

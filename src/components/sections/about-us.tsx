@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export function AboutUs() {
   const containerVariants = {
@@ -29,9 +30,8 @@ export function AboutUs() {
     <section id="about-us" className="relative bg-white py-48 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5">
-        <div className="absolute top-20 right-16 w-32 h-32 bg-burgundy rounded-full"></div>
-        <div className="absolute bottom-32 left-20 w-24 h-24 bg-burgundy rounded-full"></div>
-        <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-burgundy rounded-full"></div>
+        <div className="absolute top-20 right-16 w-32 h-32 bg-gray-800 rounded-full"></div>
+        <div className="absolute bottom-32 left-20 w-24 h-24 bg-gray-800 rounded-full"></div>
       </div>
 
       <div className="max-w-none mx-auto px-8 sm:px-12 lg:px-16 relative z-10">
@@ -51,17 +51,25 @@ export function AboutUs() {
               A Trusted Design & Build Company in Modesto
             </motion.p>
             <motion.h2 
-              className="text-burgundy text-5xl lg:text-5xl leading-tight mb-8"
+              className="text-black text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
               variants={itemVariants}
             >
               Where Craftsmanship & Design Meet Innovation
             </motion.h2>
             
-            {/* Decorative accent line */}
+            {/* Remodel Brilliance Image */}
             <motion.div 
-              className="w-24 h-1 bg-burgundy mb-8 mx-auto lg:mx-0"
+              className="mb-8 mx-auto lg:mx-0"
               variants={itemVariants}
-            ></motion.div>
+            >
+              <Image
+                src="/image-assets/about-us/remodel-brilliance.webp"
+                alt="Remodel Brilliance"
+                width={1200}
+                height={800}
+                className="rounded-lg shadow-md"
+              />
+            </motion.div>
           </motion.div>
           
           {/* Right Column */}
@@ -72,7 +80,7 @@ export function AboutUs() {
               whileHover={{ y: -5 }}
             >
               <p className="text-gray-800 text-lg leading-relaxed font-medium">
-                With over 20 years of experience, Reputation Builders & Handyman Services transforms Central Valley-area homes into deeply personal, beautifully livable spaces. Our full-service team guides you seamlessly from first sketch to final reveal, so you can enjoy the process as much as the outcome.
+                With over 20 years of experience, Reputation Builders transforms Central Valley-area homes into deeply personal, beautifully livable spaces. Our full-service team guides you seamlessly from first sketch to final reveal, so you can enjoy the process as much as the outcome.
               </p>
             </motion.div>
             
@@ -87,16 +95,13 @@ export function AboutUs() {
             </motion.div>
 
             <motion.div 
-              className="bg-burgundy bg-opacity-5 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 border-l-4 border-burgundy"
+              className="bg-gray-800 bg-opacity-5 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 border-l-4 border-black"
               variants={itemVariants}
               whileHover={{ y: -5 }}
             >
               <p className="text-gray-800 text-lg leading-relaxed font-medium italic">
                 This is remodeling, elevated. Designed to reflect your lifestyle, your values, and your future.
               </p>
-              
-              {/* Small decorative icon */}
-              <div className="mt-4 text-2xl text-burgundy">🏗️</div>
             </motion.div>
           </motion.div>
         </motion.div>

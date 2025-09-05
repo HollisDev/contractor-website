@@ -98,7 +98,7 @@ export function BeforeAfter() {
           {/* Section Header */}
           <motion.div className="text-center mb-16" variants={itemVariants}>
             <motion.h2 
-              className="text-4xl lg:text-5xl text-burgundy mb-6"
+              className="text-4xl lg:text-5xl text-black mb-6"
               variants={itemVariants}
             >
               Our Transformations
@@ -113,7 +113,7 @@ export function BeforeAfter() {
           </motion.div>
 
           {/* Before/After Slider */}
-          <motion.div className="relative mx-auto max-w-6xl" variants={itemVariants}>
+          <motion.div className="relative mx-auto max-w-7xl" variants={itemVariants}>
             <div
             ref={containerRef}
             className="relative overflow-hidden rounded-xl shadow-2xl cursor-grab active:cursor-grabbing select-none"
@@ -138,7 +138,7 @@ export function BeforeAfter() {
                 draggable={false}
               />
               {/* After Label */}
-              <div className="absolute bottom-4 left-4 bg-gray-100 text-burgundy px-4 py-2 rounded-lg font-semibold text-lg shadow-lg select-none">
+              <div className="absolute bottom-4 left-4 bg-gray-100 text-black px-4 py-2 rounded-lg font-semibold text-lg shadow-lg select-none">
                 After
               </div>
             </div>
@@ -158,7 +158,7 @@ export function BeforeAfter() {
                 draggable={false}
               />
               {/* Before Label */}
-              <div className="absolute bottom-4 right-4 bg-burgundy text-gray-100 px-4 py-2 rounded-lg font-semibold text-lg shadow-lg select-none">
+              <div className="absolute bottom-4 right-4 bg-gray-800 text-gray-100 px-4 py-2 rounded-lg font-semibold text-lg shadow-lg select-none">
                 Before
               </div>
             </div>
@@ -170,16 +170,16 @@ export function BeforeAfter() {
             >
               {/* Slider Handle */}
               <div
-                className="absolute top-1/2 left-1/2 w-12 h-12 bg-white rounded-full shadow-xl border-4 border-burgundy cursor-grab active:cursor-grabbing flex items-center justify-center"
+                className="absolute top-1/2 left-1/2 w-12 h-12 bg-white rounded-full shadow-xl border-4 border-black cursor-grab active:cursor-grabbing flex items-center justify-center"
                 style={{ transform: 'translate(-50%, -50%)' }}
               >
                 <div className="flex space-x-1">
-                  <div className="w-1 h-4 bg-burgundy rounded-full"></div>
+                  <div className="w-1 h-4 bg-gray-800 rounded-full"></div>
                   <div className="flex flex-col space-y-1">
-                    <div className="w-2 h-1 bg-burgundy rounded-full"></div>
-                    <div className="w-2 h-1 bg-burgundy rounded-full"></div>
+                    <div className="w-2 h-1 bg-gray-800 rounded-full"></div>
+                    <div className="w-2 h-1 bg-gray-800 rounded-full"></div>
                   </div>
-                  <div className="w-1 h-4 bg-burgundy rounded-full"></div>
+                  <div className="w-1 h-4 bg-gray-800 rounded-full"></div>
                 </div>
               </div>
             </div>

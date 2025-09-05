@@ -41,7 +41,7 @@ export function OurPromise() {
           Our Promise
         </motion.h3>
         <motion.h2 
-          className="text-3xl lg:text-4xl text-burgundy leading-tight mb-8"
+          className="text-3xl lg:text-4xl text-black leading-tight mb-8"
           variants={itemVariants}
         >
           Here's the Thing
@@ -52,7 +52,7 @@ export function OurPromise() {
           variants={itemVariants}
         >
           <p>
-            We've been at this for twenty-three years now. Long enough to know that promises in this business 
+            We've been at this for twenty-plus years now. Long enough to know that promises in this business 
             are like campaign speeches—everybody makes them, not everybody keeps them.
           </p>
           
@@ -66,7 +66,7 @@ export function OurPromise() {
             have nodded at and said, "That'll do."
           </p>
           
-          <p className="text-burgundy font-medium italic">
+          <p className="text-black font-medium italic">
             That's it. That's the promise.
           </p>
         </motion.div>

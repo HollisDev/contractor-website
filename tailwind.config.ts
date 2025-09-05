@@ -36,7 +36,7 @@ const config: Config = {
   				foreground: 'hsl(var(--accent-foreground))'
   			},
   			bronze: '#B58A5F',
-  			burgundy: '#800020',
+  			burgundy: '#000000',
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
