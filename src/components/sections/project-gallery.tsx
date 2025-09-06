@@ -317,7 +317,7 @@ export function ProjectGallery() {
             <div className="text-gray-600 font-medium">Client Satisfaction</div>
           </motion.div>
           <motion.div className="text-center" variants={itemVariants}>
-            <div className="text-4xl lg:text-5xl font-bold text-black mb-2">15+</div>
+            <div className="text-4xl lg:text-5xl font-bold text-black mb-2">20+</div>
             <div className="text-gray-600 font-medium">Years Experience</div>
           </motion.div>
           <motion.div className="text-center" variants={itemVariants}>
