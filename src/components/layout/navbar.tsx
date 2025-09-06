@@ -100,7 +100,7 @@ export function Navbar() {
               <Link
                 href="#contact"
                 className={cn(
-                  'border-2 border-black text-black px-6 py-2 text-xl font-medium hover:bg-black hover:text-white transition-colors shadow-lg rounded-md',
+                  'border-2 border-black text-black px-6 py-2 text-lg font-medium hover:bg-black hover:text-white transition-colors shadow-lg rounded-md',
                   pathname === '#contact' && 'bg-black text-white'
                 )}
               >
