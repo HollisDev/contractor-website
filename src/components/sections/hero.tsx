@@ -56,7 +56,7 @@ export function Hero() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative -mt-[1px]">
       {/* Hero Section with Image Carousel */}
       <ImagesSlider
         className="h-[110vh]"
@@ -68,7 +68,7 @@ export function Hero() {
         {/* Semi-transparent overlay to make text pop */}
         <div className="absolute inset-0 bg-black/40 z-40" />
         
-        <div className="relative z-50 flex h-full items-center justify-center pt-18">
+        <div className="relative z-50 flex h-full items-center justify-center">
           {/* Content - Centered */}
           <div className="w-full text-center px-4 sm:px-6 lg:px-8">
             <div className="mx-auto">

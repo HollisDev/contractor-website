@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen -mt-4">
       {/* Hero Section - Full screen with parallax */}
       <Hero />
       
