@@ -43,15 +43,15 @@ export function Navbar() {
     <>
       <nav className="fixed top-0 z-50 w-full backdrop-blur-lg border-b bg-white border-white/10 shadow-lg" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
         <div className="w-full px-8 sm:px-12 lg:px-16">
-          <div className="flex justify-between items-center h-28 w-full relative">
+          <div className="flex justify-between items-center h-32 w-full relative">
             {/* Left Navigation - Push to far left */}
-            <div className="hidden nav:flex items-center space-x-8">
+            <div className="hidden nav:flex items-center space-x-6 xl:space-x-8">
               {leftNavigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'text-xl font-medium transition-all duration-200 hover:bg-gray-100 px-3 py-2 rounded-md',
+                    'text-lg xl:text-xl font-medium transition-all duration-200 hover:bg-gray-100 px-3 py-2 rounded-md whitespace-nowrap',
                     pathname === item.href
                       ? 'text-black border-b-2 border-black pb-1'
                       : 'text-black'
@@ -69,23 +69,24 @@ export function Navbar() {
                   src="/image-assets/nav-bar/measuring-tape.png"
                   alt="Measuring Tape"
                   width={330}
-                  height={100}
-                  className="mb-2 -mt-2"
+                  height={85}
+                  className="mb-1 -mt-1"
+                  priority
                 />
-                <div className="text-lg xs:text-xl sm:text-2xl lg:text-3xl xl:text-3xl text-black leading-tight font-bold -mt-6 mb-1">
+                <div className="text-base sm:text-lg md:text-xl lg:text-3xl text-black leading-tight font-bold -mt-4 mb-1 -mr-2 whitespace-nowrap">
                   Reputation Builders
                 </div>
               </div>
             </Link>
 
             {/* Right Navigation - Push to far right */}
-            <div className="hidden nav:flex items-center space-x-8">
+            <div className="hidden nav:flex items-center space-x-6 xl:space-x-8">
               {rightNavigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'text-xl font-medium transition-all duration-200 hover:bg-gray-100 px-3 py-2 rounded-md',
+                    'text-lg xl:text-xl font-medium transition-all duration-200 hover:bg-gray-100 px-3 py-2 rounded-md whitespace-nowrap',
                     pathname === item.href
                       ? 'text-black border-b-2 border-black pb-1'
                       : 'text-black'
