@@ -51,7 +51,7 @@ export function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'text-lg xl:text-xl font-medium transition-all duration-200 hover:bg-gray-100 px-3 py-2 rounded-md whitespace-nowrap',
+                    'text-lg xl:text-lg font-medium transition-all duration-200 hover:bg-gray-100 px-3 py-2 rounded-md whitespace-nowrap',
                     pathname === item.href
                       ? 'text-black border-b-2 border-black pb-1'
                       : 'text-black'
@@ -86,7 +86,7 @@ export function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'text-lg xl:text-xl font-medium transition-all duration-200 hover:bg-gray-100 px-3 py-2 rounded-md whitespace-nowrap',
+                    'text-lg xl:text-lg font-medium transition-all duration-200 hover:bg-gray-100 px-3 py-2 rounded-md whitespace-nowrap',
                     pathname === item.href
                       ? 'text-black border-b-2 border-black pb-1'
                       : 'text-black'
