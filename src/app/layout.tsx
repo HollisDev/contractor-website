@@ -5,7 +5,12 @@ import { Toaster } from '@/components/ui/toaster';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  weight: ['300', '400', '500', '600', '700', '800', '900']
+});
 
 export const metadata = {
   title: 'Reputation Builders',

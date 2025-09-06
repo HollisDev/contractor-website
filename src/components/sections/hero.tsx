@@ -68,7 +68,7 @@ export function Hero() {
         {/* Semi-transparent overlay to make text pop */}
         <div className="absolute inset-0 bg-black/40 z-40" />
         
-        <div className="relative z-50 flex h-full items-center justify-center pt-8 lg:pt-12">
+        <div className="relative z-50 flex h-full items-center justify-center">
           {/* Content - Centered */}
           <div className="w-full text-center px-4 sm:px-6 lg:px-8">
             <div className="mx-auto">
@@ -85,36 +85,77 @@ export function Hero() {
                 
                 {/* Subtitle with Wave Animation */}
                 <div className="w-full flex justify-center">
-                  <div className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed drop-shadow-md text-center max-w-[320px] xs:max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl px-2">
-                    <div className="w-full flex justify-center mb-1">
-                      <span className="text-center">
-                        {renderWaveText('Premium kitchen, bathroom,', 1)}
-                      </span>
+                  <div className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white leading-relaxed drop-shadow-md text-center max-w-[400px] xs:max-w-[420px] sm:max-w-md md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-1">
+                    {/* Mobile layout - 6 short lines */}
+                    <div className="block md:hidden">
+                      <div className="w-full flex justify-center mb-1">
+                        <span className="text-center">
+                          {renderWaveText('Premium kitchen, bathroom,', 1)}
+                        </span>
+                      </div>
+                      <div className="w-full flex justify-center mb-1">
+                        <span className="text-center">
+                          {renderWaveText('and general house', 1)}
+                        </span>
+                      </div>
+                      <div className="w-full flex justify-center mb-2">
+                        <span className="text-center">
+                          {renderWaveText('remodeling with expert', 1)}
+                        </span>
+                      </div>
+                      <div className="w-full flex justify-center mb-1">
+                        <span className="text-center">
+                          {renderWaveText('craftsmanship, innovative', 1)}
+                        </span>
+                      </div>
+                      <div className="w-full flex justify-center mb-1">
+                        <span className="text-center">
+                          {renderWaveText('design, and unmatched', 1)}
+                        </span>
+                      </div>
+                      <div className="w-full flex justify-center">
+                        <span className="text-center">
+                          {renderWaveText('attention to detail.', 1)}
+                        </span>
+                      </div>
                     </div>
-                    <div className="w-full flex justify-center mb-1">
-                      <span className="text-center">
-                        {renderWaveText('and general house', 1)}
-                      </span>
+
+                    {/* Tablet layout - 4 medium lines */}
+                    <div className="hidden md:block lg:hidden">
+                      <div className="w-full flex justify-center mb-1">
+                        <span className="text-center">
+                          {renderWaveText('Premium kitchen, bathroom,', 1)}
+                        </span>
+                      </div>
+                      <div className="w-full flex justify-center mb-1">
+                        <span className="text-center">
+                          {renderWaveText('and general house remodeling', 1)}
+                        </span>
+                      </div>
+                      <div className="w-full flex justify-center mb-1">
+                        <span className="text-center">
+                          {renderWaveText('with expert craftsmanship,', 1)}
+                        </span>
+                      </div>
+                      <div className="w-full flex justify-center">
+                        <span className="text-center">
+                          {renderWaveText('innovative design, and unmatched attention to detail.', 1)}
+                        </span>
+                      </div>
                     </div>
-                    <div className="w-full flex justify-center mb-2">
-                      <span className="text-center">
-                        {renderWaveText('remodeling with expert', 1)}
-                      </span>
-                    </div>
-                    <div className="w-full flex justify-center mb-1">
-                      <span className="text-center">
-                        {renderWaveText('craftsmanship, innovative', 1)}
-                      </span>
-                    </div>
-                    <div className="w-full flex justify-center">
-                      <span className="text-center">
-                        {renderWaveText('design, and unmatched', 1)}
-                      </span>
-                    </div>
-                    <div className="w-full flex justify-center">
-                      <span className="text-center">
-                        {renderWaveText('attention to detail.', 1)}
-                      </span>
+
+                    {/* Desktop layout - 2 normal lines */}
+                    <div className="hidden lg:block">
+                      <div className="w-full flex justify-center mb-2">
+                        <span className="text-center">
+                          {renderWaveText('Premium kitchen, bathroom, and general house remodeling with', 1)}
+                        </span>
+                      </div>
+                      <div className="w-full flex justify-center">
+                        <span className="text-center">
+                          {renderWaveText('expert craftsmanship, innovative design, and unmatched attention to detail.', 1)}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
