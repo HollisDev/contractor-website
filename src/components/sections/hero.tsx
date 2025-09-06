@@ -68,7 +68,7 @@ export function Hero() {
         {/* Semi-transparent overlay to make text pop */}
         <div className="absolute inset-0 bg-black/40 z-40" />
         
-        <div className="relative z-50 flex h-full items-center justify-center">
+        <div className="relative z-50 flex h-full items-center justify-center pt-8 lg:pt-12">
           {/* Content - Centered */}
           <div className="w-full text-center px-4 sm:px-6 lg:px-8">
             <div className="mx-auto">
@@ -85,15 +85,35 @@ export function Hero() {
                 
                 {/* Subtitle with Wave Animation */}
                 <div className="w-full flex justify-center">
-                  <div className="text-base sm:text-lg md:text-2xl text-white leading-relaxed drop-shadow-md text-center max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-4xl">
+                  <div className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed drop-shadow-md text-center max-w-[320px] xs:max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl px-2">
+                    <div className="w-full flex justify-center mb-1">
+                      <span className="text-center">
+                        {renderWaveText('Premium kitchen, bathroom,', 1)}
+                      </span>
+                    </div>
+                    <div className="w-full flex justify-center mb-1">
+                      <span className="text-center">
+                        {renderWaveText('and general house', 1)}
+                      </span>
+                    </div>
                     <div className="w-full flex justify-center mb-2">
                       <span className="text-center">
-                        {renderWaveText('Premium kitchen, bathroom, and general house remodeling with', 1)}
+                        {renderWaveText('remodeling with expert', 1)}
+                      </span>
+                    </div>
+                    <div className="w-full flex justify-center mb-1">
+                      <span className="text-center">
+                        {renderWaveText('craftsmanship, innovative', 1)}
                       </span>
                     </div>
                     <div className="w-full flex justify-center">
                       <span className="text-center">
-                        {renderWaveText('expert craftsmanship, innovative design, and unmatched attention to detail.', 1)}
+                        {renderWaveText('design, and unmatched', 1)}
+                      </span>
+                    </div>
+                    <div className="w-full flex justify-center">
+                      <span className="text-center">
+                        {renderWaveText('attention to detail.', 1)}
                       </span>
                     </div>
                   </div>

@@ -68,12 +68,12 @@ export function Navbar() {
                 <Image
                   src="/image-assets/nav-bar/measuring-tape.png"
                   alt="Measuring Tape"
-                  width={330}
-                  height={85}
+                  width={380}
+                  height={105}
                   className="mb-1 -mt-1 -ml-3" 
                   priority
                 />
-                <div className="text-base sm:text-lg md:text-xl lg:text-3xl text-black leading-tight font-bold -mt-4 mb-1 whitespace-nowrap">
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight font-bold -mt-4 mb-1 whitespace-nowrap">
                   Reputation Builders
                 </div>
               </div>

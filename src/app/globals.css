@@ -96,6 +96,26 @@ nav {
   font-display: swap;
 }
 
+/* Text breaking prevention */
+.no-break {
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+/* Better text wrapping for responsive design */
+h1, h2, h3, h4, h5, h6 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
+/* Navigation specific fixes */
+nav a {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
 /* Focus styles for accessibility */
 .focus-visible {
   @apply outline-2 outline-accent outline-offset-2;
