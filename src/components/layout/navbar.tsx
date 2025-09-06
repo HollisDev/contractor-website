@@ -63,7 +63,7 @@ export function Navbar() {
             </div>
 
             {/* Center Logo - Centered with maximum space */}
-            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-center">
+            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-center -ml-4">
               <div className="flex flex-col items-center ">
                 <Image
                   src="/image-assets/nav-bar/measuring-tape.png"
@@ -73,7 +73,7 @@ export function Navbar() {
                   className="mb-1 -mt-1 -ml-3" 
                   priority
                 />
-                <div className="text-base sm:text-lg md:text-xl lg:text-3xl text-black leading-tight font-bold -mt-4 mb-1  whitespace-nowrap">
+                <div className="text-base sm:text-lg md:text-xl lg:text-3xl text-black leading-tight font-bold -mt-4 mb-1 whitespace-nowrap">
                   Reputation Builders
                 </div>
               </div>
