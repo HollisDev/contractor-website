@@ -16,7 +16,7 @@ const leftNavigation = [
 
 const rightNavigation = [
   { name: 'Gallery', href: '#project-gallery' },
-  { name: 'Why Choose Us', href: '#why-choose-us' },
+  { name: 'Choose Us', href: '#why-choose-us' },
   { name: 'Our Promise', href: '#our-promise' },
 ];
 
@@ -63,7 +63,7 @@ export function Navbar() {
             </div>
 
             {/* Center Logo - Centered with maximum space */}
-            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-center -ml-4">
+            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-center">
               <div className="flex flex-col items-center ">
                 <Image
                   src="/image-assets/nav-bar/measuring-tape.png"
