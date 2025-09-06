@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#800020">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="#ffffff">
   <!-- House shape -->
   <path d="M16 2L2 14h3v16h8v-8h6v8h8V14h3L16 2z"/>
   <!-- Hammer handle -->
-  <rect x="20" y="18" width="2" height="8" fill="#58595b"/>
+  <rect x="20" y="18" width="2" height="8" fill="#ffffff"/>
   <!-- Hammer head -->
-  <rect x="19" y="16" width="4" height="3" fill="#58595b"/>
+  <rect x="19" y="16" width="4" height="3" fill="#ffffff"/>
 </svg>
