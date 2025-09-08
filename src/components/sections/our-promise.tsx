@@ -35,20 +35,20 @@ export function OurPromise() {
         variants={containerVariants}
       >
         <motion.h3 
-          className="text-xl font-medium text-black mb-4 tracking-wide uppercase"
+            className="text-xl md:text-2xl lg:text-2xl font-semibold text-black mb-4 tracking-wide uppercase"
           variants={itemVariants}
         >
           Our Promise
         </motion.h3>
         <motion.h2 
-          className="text-3xl lg:text-4xl text-black leading-tight mb-8"
+            className="text-4xl md:text-7xl lg:text-7xl font-extrabold text-black leading-tight mb-8"
           variants={itemVariants}
         >
           Here's the Thing
         </motion.h2>
         
         <motion.div 
-          className="text-lg text-black leading-relaxed space-y-6 max-w-2xl mx-auto"
+            className="text-lg lg:text-xl text-black leading-relaxed space-y-6 max-w-2xl mx-auto"
           variants={itemVariants}
         >
           <p>
@@ -66,7 +66,7 @@ export function OurPromise() {
             have nodded at and said, "That'll do."
           </p>
           
-          <p className="text-black font-medium italic">
+            <p className="text-lg lg:text-xl text-black font-bold italic">
             That's it. That's the promise.
           </p>
         </motion.div>

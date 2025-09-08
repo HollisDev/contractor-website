@@ -120,7 +120,7 @@ export function OurServices() {
             >
               <div className="bg-gray-800/5 p-6 rounded-xl border-l-4 border-black">
                 <motion.p 
-                  className="text-2xl lg:text-3xl text-black mb-2 tracking-wide"
+                  className="text-xl md:text-2xl lg:text-2xl font-bold text-black mb-2 tracking-wide"
                 >
                   Almost Anything You Need
                 </motion.p>
@@ -136,19 +136,19 @@ export function OurServices() {
             {/* Section Header */}
             <div>
               <motion.h3 
-                className="text-2xl font-medium text-black mb-6 tracking-wide"
+                className="text-xl md:text-2xl lg:text-2xl font-semibold text-black mb-6 tracking-wide"
                 variants={itemVariants}
               >
                 Our Services
               </motion.h3>
               <motion.h2 
-                className="text-4xl lg:text-6xl text-black leading-tight mb-8"
+                className="text-4xl md:text-7xl lg:text-7xl font-extrabold text-black leading-tight mb-8"
                 variants={itemVariants}
               >
                 Elevating Your Living Space, Enhancing Your Quality of Life
               </motion.h2>
               <motion.p 
-                className="text-lg text-gray-700 leading-relaxed mb-12"
+                className="text-lg lg:text-xl text-gray-700 leading-relaxed mb-12"
                 variants={itemVariants}
               >
                 Fusing the disciplines of design and construction into one design-build company in Modesto assures that we achieve your vision, time, cost, and quality expectations.
@@ -177,7 +177,7 @@ export function OurServices() {
                       }}
                       onMouseLeave={() => setIsHovered(false)}
                     >
-                      <h4 className="text-xl font-semibold text-gray-700 group-hover:text-black transition-colors duration-300 mb-2">
+                      <h4 className="text-2xl font-semibold text-gray-700 group-hover:text-black transition-colors duration-300 mb-2">
                         {service.title}
                       </h4>
                       {index < services.length - 1 && (

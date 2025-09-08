@@ -41,19 +41,19 @@ export function CallToAction() {
             {/* Section Header */}
             <div className="text-center">
               <motion.h3 
-                className="text-2xl font-medium text-black mb-6 tracking-wide"
+                className="text-xl md:text-2xl lg:text-2xl font-semibold text-black mb-6 tracking-wide"
                 variants={itemVariants}
               >
                 Get in Touch
               </motion.h3>
               <motion.h2 
-                className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl text-black leading-tight mb-12"
+                className="text-4xl md:text-7xl lg:text-7xl font-extrabold text-black leading-tight mb-12"
                 variants={itemVariants}
               >
-                Ready to Transform<br />Your Space?
+                Ready to Transform<span className="hidden md:inline"><br /></span><span className="md:hidden"> </span>Your Space?
               </motion.h2>
               <motion.p 
-                className="text-xl text-gray-700 leading-relaxed mb-12"
+                className="text-lg lg:text-xl text-gray-700 leading-relaxed mb-12"
                 variants={itemVariants}
               >
                 Let's discuss your vision and create something extraordinary together. 
@@ -70,8 +70,8 @@ export function CallToAction() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-lg font-semibold text-gray-900">Call Us Today</p>
-                  <a href="tel:2093124169" className="text-xl font-bold text-black hover:text-red-800 transition-colors">
+                  <p className="text-lg lg:text-xl font-semibold text-gray-900">Call Us Today</p>
+                  <a href="tel:2093124169" className="text-lg lg:text-xl font-bold text-black hover:text-red-800 transition-colors">
                     (209) 312-4169
                   </a>
                 </div>
@@ -85,8 +85,8 @@ export function CallToAction() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-lg font-semibold text-gray-900">Service Area</p>
-                  <p className="text-xl font-bold text-black">Modesto, CA & Surrounding Areas</p>
+                  <p className="text-lg lg:text-xl font-semibold text-gray-900">Service Area</p>
+                  <p className="text-lg lg:text-xl font-bold text-black">Modesto, CA & Surrounding Areas</p>
                 </div>
               </div>
 
@@ -97,8 +97,8 @@ export function CallToAction() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-lg font-semibold text-gray-900">Business Hours</p>
-                  <p className="text-xl font-bold text-black">Mon-Fri: 7AM-6PM</p>
+                  <p className="text-lg lg:text-xl font-semibold text-gray-900">Business Hours</p>
+                  <p className="text-lg lg:text-xl font-bold text-black">Mon-Fri: 7AM-6PM</p>
                 </div>
               </div>
             </motion.div>
@@ -106,7 +106,7 @@ export function CallToAction() {
             {/* CTA Button */}
             <motion.div className="pt-8" variants={itemVariants}>
               <button
-                className="inline-flex items-center border-2 border-black text-black px-8 py-4 text-xl font-bold hover:bg-gray-800 hover:text-white transition-colors shadow-lg rounded-lg cursor-default"
+                className="inline-flex items-center border-2 border-black text-black px-8 py-4 text-lg font-bold hover:bg-gray-800 hover:text-white transition-colors shadow-lg rounded-lg cursor-default"
               >
                 Schedule Free Consultation
                 <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,7 +133,7 @@ export function CallToAction() {
             
             {/* Map Overlay Info */}
             <div className="absolute bottom-6 left-6 bg-white bg-opacity-95 backdrop-blur-sm px-6 py-4 rounded-lg shadow-lg">
-              <h4 className="text-lg font-bold text-black mb-1">Our Service Area</h4>
+              <h4 className="text-lg lg:text-xl font-bold text-black mb-1">Our Service Area</h4>
               <p className="text-gray-700">Modesto, CA 95355 & Surrounding Communities</p>
             </div>
           </motion.div>

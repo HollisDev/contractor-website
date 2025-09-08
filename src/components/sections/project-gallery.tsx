@@ -176,19 +176,19 @@ export function ProjectGallery() {
           variants={containerVariants}
         >
           <motion.h3 
-            className="text-2xl font-medium text-black mb-6 tracking-wide"
+            className="text-xl md:text-2xl lg:text-2xl font-semibold text-black mb-6 tracking-wide"
             variants={itemVariants}
           >
             Our Work
           </motion.h3>
           <motion.h2 
-            className="text-4xl lg:text-6xl text-black leading-tight mb-8"
+            className="text-4xl md:text-7xl lg:text-7xl font-extrabold text-black leading-tight mb-8"
             variants={itemVariants}
           >
             Project Gallery
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
+            className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
             variants={itemVariants}
           >
             Explore our portfolio of completed projects and see how we transform spaces 

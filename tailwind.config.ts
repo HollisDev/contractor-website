@@ -76,10 +76,12 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		fontFamily: {
-  			sans: [
-  				'Inter',
-  				'sans-serif'
-  			]
+  			sans: ['Montserrat', 'ui-sans-serif', 'system-ui'],
+  		},
+  		extend: {
+  			fontFamily: {
+  				sans: ['Montserrat', 'ui-sans-serif', 'system-ui'],
+  			},
   		},
   		keyframes: {
   			'accordion-down': {

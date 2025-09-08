@@ -45,13 +45,13 @@ export function AboutUs() {
           {/* Left Column */}
           <motion.div className="text-center lg:text-left" variants={itemVariants}>
             <motion.p 
-              className="text-gray-800 text-2xl mb-8"
+              className="text-xl md:text-2xl lg:text-2xl font-semibold text-gray-800 mb-8"
               variants={itemVariants}
             >
               A Trusted Design & Build Company in Modesto
             </motion.p>
             <motion.h2 
-              className="text-black text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
+              className="text-4xl md:text-7xl lg:text-7xl font-extrabold text-black leading-tight mb-6"
               variants={itemVariants}
             >
               Where Craftsmanship & Design Meet Innovation

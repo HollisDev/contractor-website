@@ -2,15 +2,7 @@ import { Footer } from '@/components/layout/footer';
 import { Navbar } from '@/components/layout/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
-import { Roboto_Condensed } from 'next/font/google';
 import './globals.css';
-
-const robotoCondensed = Roboto_Condensed({ 
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-  weight: ['300', '400', '500', '600', '700', '800', '900']
-});
 
 export const metadata = {
   title: 'Reputation Builders',
@@ -27,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={robotoCondensed.className}>
+      <body className="font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

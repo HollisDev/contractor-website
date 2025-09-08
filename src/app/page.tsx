@@ -19,28 +19,28 @@ export default function HomePage() {
     <div className="min-h-screen -mt-4">
       {/* Hero Section - Full screen with parallax */}
       <Hero />
-      
+
+      {/* Get Started - Initial Consultation (moved up) */}
+      <GetStarted />
+
       {/* About Us Section */}
       <AboutUs />
-      
+
       {/* Before & After Transformations */}
       <BeforeAfter />
-      
+
       {/* Our Services with Image Scroller + Lighting Showcase */}
       <OurServices />
-      
-      {/* Get Started - Initial Consultation */}
-      <GetStarted />
-      
+
       {/* Project Gallery */}
       <ProjectGallery />
-      
+
       {/* Why Choose Us */}
       <WhyChooseUs />
-      
+
       {/* Our Promise */}
       <OurPromise />
-      
+
       {/* Call to Action */}
       <CallToAction />
     </div>

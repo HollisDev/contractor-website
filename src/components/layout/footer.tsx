@@ -6,10 +6,10 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const navigationLinks = [
+    { name: 'Get Started', href: '#get-started' },
     { name: 'About Us', href: '#about-us' },
     { name: 'Services', href: '#our-services' },
     { name: 'Before & After', href: '#before-after' },
-    { name: 'Get Started', href: '#get-started' },
     { name: 'Gallery', href: '#project-gallery' },
     { name: 'Choose Us', href: '#why-choose-us' },
     { name: 'Our Promise', href: '#our-promise' },
@@ -24,7 +24,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="mb-6">
               <div className="text-3xl lg:text-4xl text-white leading-tight">
-                <div className="border-b-2 border-white pb-1">Reputation Builders</div>
+                <div className="border-b-4 border-white pb-2 mb-2 text-5xl lg:text-6xl font-extrabold">Reputation Builders</div>
               </div>
             </div>
             <p className="text-gray-300 mb-8 leading-relaxed max-w-2xl text-lg mx-auto md:mx-0">
@@ -38,13 +38,13 @@ export function Footer() {
 
           {/* Navigation Links */}
           <div>
-            <h4 className="text-xl font-semibold mb-6 text-white">Quick Links</h4>
+            <h4 className="text-2xl lg:text-3xl font-semibold mb-6 text-white">Quick Links</h4>
             <ul className="space-y-3">
               {navigationLinks.map((item) => (
                 <li key={item.name}>
                   <Link 
                     href={item.href} 
-                    className="text-gray-300 hover:text-white transition-colors text-lg"
+                    className="text-gray-300 hover:text-white transition-colors text-lg font-bold"
                   >
                     {item.name}
                   </Link>

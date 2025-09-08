@@ -80,19 +80,19 @@ export function WhyChooseUs() {
           variants={containerVariants}
         >
           <motion.h3 
-            className="text-2xl font-medium text-black mb-6 tracking-wide"
+            className="text-xl md:text-2xl lg:text-2xl font-semibold text-black mb-6 tracking-wide"
             variants={itemVariants}
           >
             Why Choose Us
           </motion.h3>
           <motion.h2 
-            className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl text-black leading-tight mb-8 max-w-4xl mx-auto"
+            className="text-4xl md:text-7xl lg:text-7xl font-extrabold text-black leading-tight mb-8 max-w-4xl mx-auto"
             variants={itemVariants}
           >
             Excellence in Every Detail
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
+            className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto"
             variants={itemVariants}
           >
             When you choose Reputation Builders, you're choosing a team 
@@ -152,27 +152,30 @@ export function WhyChooseUs() {
       </div>
 
       {/* Grey Bar - Full width across entire screen */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.2 }}
         className="absolute left-0 right-0 w-screen text-white py-6 px-4 sm:px-6 lg:px-8"
         style={{ backgroundColor: '#58595b', bottom: '24px' }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-center text-center md:text-left space-y-3 md:space-y-0 md:space-x-8">
-            <div className="text-2xl text-white leading-tight">
+            <div className="text-xl lg:text-2xl text-white leading-tight font-semibold drop-shadow-md">
               Reputation Builders
             </div>
             <span className="hidden md:inline text-gray-200 text-4xl">|</span>
-            <span className="text-white text-xl">Schedule a Consultation</span>
+            <span className="text-white text-xl lg:text-2xl font-bold">Schedule a Consultation</span>
             <span className="hidden md:inline text-gray-200 text-4xl">|</span>
             <a 
               href="tel:2093124169" 
-              className="text-white hover:text-gray-200 transition-colors font-semibold text-xl"
+              className="text-white hover:text-gray-200 transition-colors font-bold text-xl lg:text-2xl"
             >
               Call Us: (209) 312-4169
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

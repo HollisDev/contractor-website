@@ -8,10 +8,10 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const leftNavigation = [
+  { name: 'Get Started', href: '#get-started' },
   { name: 'About Us', href: '#about-us' },
   { name: 'Services', href: '#our-services' },
   { name: 'Before & After', href: '#before-after' },
-  { name: 'Get Started', href: '#get-started' },
 ];
 
 const rightNavigation = [
@@ -63,25 +63,15 @@ export function Navbar() {
             </div>
 
             {/* Center Logo - Centered with maximum space */}
-            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/image-assets/nav-bar/reputation-builders-logo.png"
-                  alt="Reputation Builders Logo"
-                  width={98}
-                  height={75}
-                  className="flex-shrink-0" 
-                  priority
-                />
-                <div className="flex flex-col justify-center text-left">
-                  <div className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl text-black leading-tight font-bold my-2 -mt-1">
-                    Reputation
-                  </div>
-                  <div className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl text-black leading-tight font-bold -mt-1" style={{ marginTop: '1px' }}>
-                    Builders
-                  </div>
-                </div>
-              </div>
+            <Link href="/" className="absolute left-[42%] sm:left-[48.5%] md:left-[49%] lg:left-[48.5%] transform -translate-x-1/2 mt-8">
+              <Image
+                src="/image-assets/brand-logo/brand-logo.png"
+                alt="Reputation Builders"
+                width={400}
+                height={120}
+                className="h-[310px] w-auto sm:h-64 md:h-80 lg:h-96"
+                priority
+              />
             </Link>
 
             {/* Right Navigation - Push to far right */}
@@ -105,7 +95,7 @@ export function Navbar() {
               <Link
                 href="#contact"
                 className={cn(
-                  'border-2 border-black text-black px-6 py-2 text-lg font-medium hover:bg-gray-200 hover:text-black transition-all duration-200 shadow-lg rounded-md',
+                  'border-2 border-black bg-white text-black px-6 py-2 text-lg font-medium hover:bg-black hover:text-white transition-all duration-200 shadow-lg rounded-md',
                   pathname === '#contact' && 'bg-black text-white'
                 )}
               >

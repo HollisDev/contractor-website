@@ -65,8 +65,8 @@ export function Hero() {
         autoplay={true}
         direction="up"
       >
-        {/* Semi-transparent overlay to make text pop */}
-        <div className="absolute inset-0 bg-black/40 z-40" />
+        {/* Gradient overlay - dark at bottom, transparent at top */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-40" />
         
         <div className="relative z-50 flex h-full items-center justify-center">
           {/* Content - Centered */}
@@ -74,19 +74,19 @@ export function Hero() {
             <div className="mx-auto">
               {/* Main Headline with Wave Animation */}
               <div className="mb-8">
-                <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
-                  <span className="block text-white text-center">
+                <h1 className="text-4xl md:text-7xl lg:text-7xl font-extrabold leading-tight mb-10 drop-shadow-2xl tracking-tight">
+                  <span className="block text-white text-center drop-shadow-2xl">
                     {renderWaveText('Transform ', 0)}
                     <span className="text-white-400">{renderWaveText('Your ', 0)}</span>
                   </span>
-                  <span className="block text-white drop-shadow-md text-center">
+                  <span className="block text-white drop-shadow-2xl text-center">
                     {renderWaveText('Dream Space', 0, true)}
                   </span>
                 </h1>
                 
                 {/* Subtitle with Wave Animation */}
                 <div className="w-full flex justify-center">
-                  <div className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white leading-relaxed drop-shadow-md text-center max-w-[400px] xs:max-w-[420px] sm:max-w-md md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-1">
+                  <div className="text-xl md:text-2xl lg:text-2xl text-white leading-relaxed drop-shadow-2xl text-center max-w-4xl mx-auto px-2">
                     {/* Mobile layout - 6 short lines */}
                     <div className="block md:hidden">
                       <div className="w-full flex justify-center mb-1">
@@ -99,7 +99,7 @@ export function Hero() {
                           {renderWaveText('and general house', 1)}
                         </span>
                       </div>
-                      <div className="w-full flex justify-center mb-2">
+                      <div className="w-full flex justify-center mb-1">
                         <span className="text-center">
                           {renderWaveText('remodeling with expert', 1)}
                         </span>
@@ -175,15 +175,15 @@ export function Hero() {
         >
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row items-center justify-center text-center md:text-left space-y-3 md:space-y-0 md:space-x-8">
-              <div className="text-lg sm:text-xl md:text-2xl text-white leading-tight">
+              <div className="text-xl lg:text-2xl text-white leading-tight font-semibold drop-shadow-2xl">
                 Reputation Builders
               </div>
               <span className="hidden md:inline text-gray-200 text-4xl">|</span>
-              <span className="text-white text-lg sm:text-xl">Schedule a Consultation</span>
+              <span className="text-white text-xl lg:text-2xl font-bold drop-shadow-2xl">Schedule a Consultation</span>
               <span className="hidden md:inline text-gray-200 text-4xl">|</span>
               <a 
                 href="tel:2093124169" 
-                className="text-white hover:text-gray-200 transition-colors font-semibold text-lg sm:text-xl"
+                className="text-white hover:text-gray-200 transition-colors font-bold text-xl lg:text-2xl"
               >
                 Call Us: (209) 312-4169
               </a>

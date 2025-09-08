@@ -87,7 +87,7 @@ export function BeforeAfter() {
   }, [isDragging]);
 
   return (
-    <section id="before-after" className="bg-gray-50 px-4 sm:px-6 lg:px-8" style={{ paddingTop: '144px', paddingBottom: '96px' }}>
+    <section id="before-after" className="bg-gray-50 px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial="hidden"
@@ -96,15 +96,15 @@ export function BeforeAfter() {
           variants={containerVariants}
         >
           {/* Section Header */}
-          <motion.div className="text-center mb-16" variants={itemVariants}>
+          <motion.div className="text-center mb-12 md:mb-16" variants={itemVariants}>
             <motion.h2 
-              className="text-4xl lg:text-5xl text-black mb-6"
+              className="text-4xl md:text-7xl lg:text-7xl font-extrabold text-black mb-6"
               variants={itemVariants}
             >
               Our Transformations
             </motion.h2>
             <motion.p 
-              className="text-xl text-gray-700 max-w-3xl mx-auto"
+              className="text-base md:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto px-4"
               variants={itemVariants}
             >
               See the dramatic difference our expert craftsmanship makes. 
@@ -186,8 +186,8 @@ export function BeforeAfter() {
           </div>
 
           {/* Instructions */}
-          <motion.div className="text-center mt-6" variants={itemVariants}>
-            <p className="text-gray-600">
+          <motion.div className="text-center mt-6 md:mt-8" variants={itemVariants}>
+            <p className="text-sm md:text-base text-gray-600 px-4">
               <span className="inline-block mr-2">←</span>
               Drag the slider to see the transformation
               <span className="inline-block ml-2">→</span>
