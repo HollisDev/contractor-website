@@ -63,7 +63,7 @@ export function Navbar() {
             </div>
 
             {/* Center Logo - Centered with maximum space */}
-            <Link href="/" className="absolute left-[42%] sm:left-[48.5%] md:left-[49%] lg:left-[48.5%] transform -translate-x-1/2 mt-8">
+            <Link href="/" className="absolute left-[42%] sm:left-[48.5%] md:left-[49%] lg:left-[48%] transform -translate-x-1/2 mt-8">
               <Image
                 src="/image-assets/brand-logo/brand-logo.png"
                 alt="Reputation Builders"
