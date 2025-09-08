@@ -9,7 +9,7 @@ export function WhyChooseUs() {
   const features = [
     {
       title: 'Expert Craftsmanship',
-      description: 'Over 20 years of experience transforming homes with precision and artistry.',
+      description: 'Over 35 years of experience transforming homes with precision and artistry.',
       icon: '🔨'
     },
     {

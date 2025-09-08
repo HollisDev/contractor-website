@@ -1,33 +1,12 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function OurServices() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
+  const [isHovered, setIsHovered] = useState(false);
 
   const services = [
     {
@@ -55,7 +34,7 @@ export function OurServices() {
       image: "/image-assets/our-services/services-outdoor-living.jpg"
     },
     {
-      title: "Velux Skylights — Low E3 Upgrades",
+      title: "Velux Skylights",
       image: "/image-assets/our-services/services-velux-skylights-low-e3-upgrades.webp"
     },
     {
@@ -71,6 +50,39 @@ export function OurServices() {
       image: "/image-assets/our-services/services-stone-facades.jpg"
     }
   ];
+
+  // Auto-rotate images on mobile only (when not hovered and on mobile)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovered && window.innerWidth < 1024) { // Only on mobile screens
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % services.length);
+      }
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
 
   return (
     <section id="our-services" className="relative bg-white py-32 px-4 sm:px-6 lg:px-8">
@@ -89,9 +101,9 @@ export function OurServices() {
           variants={containerVariants}
         >
           
-          {/* Left Column - Image Display */}
-          <motion.div className="relative order-2 lg:order-1" variants={itemVariants}>
-            <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[1000px] w-full rounded-2xl shadow-2xl overflow-hidden">
+          {/* Left Column - Image Display - Desktop Only */}
+          <motion.div className="relative order-2 lg:order-1 hidden lg:block" variants={itemVariants}>
+            <div className="relative h-[1000px] w-full rounded-2xl shadow-2xl overflow-hidden">
               <Image
                 src={services[currentImageIndex].image ?? "/image-assets/our-services/services-default.jpg"}
                 alt={services[currentImageIndex].title}
@@ -101,9 +113,9 @@ export function OurServices() {
               />
             </div>
             
-            {/* "Almost Anything You Need" beneath image */}
+            {/* "Almost Anything You Need" beneath image - Desktop Only */}
             <motion.div 
-              className="mt-8 text-center lg:text-left"
+              className="mt-8 text-center lg:text-left hidden lg:block"
               variants={itemVariants}
             >
               <div className="bg-gray-800/5 p-6 rounded-xl border-l-4 border-black">
@@ -142,74 +154,97 @@ export function OurServices() {
                 Fusing the disciplines of design and construction into one design-build company in Modesto assures that we achieve your vision, time, cost, and quality expectations.
               </motion.p>
               
-              {/* Copper Creek Specialization Callout */}
-              <motion.div 
-                className="relative mb-12"
-                variants={itemVariants}
-              >
-                <div className="relative bg-gradient-to-r from-gray-800/5 to-gray-800/10 p-8 rounded-2xl border-l-4 border-black">
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-gray-800/10 rounded-full flex items-center justify-center">
-                    <div className="w-6 h-6 bg-gray-800 rounded-full"></div>
-                  </div>
-                  <motion.p 
-                    className="text-2xl lg:text-3xl text-black mb-3 tracking-wide"
-                    style={{
-                      background: 'linear-gradient(135deg, #000000 0%, #333333 100%)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text'
-                    }}
-                    animate={{
-                      backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: 'linear'
-                    }}
-                  >
-                    ✦ SPECIALIZING IN ✦
-                  </motion.p>
-                  <motion.h3 
-                    className="text-3xl lg:text-4xl text-black mb-2 tracking-wider"
-                    style={{
-                      textShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
-                    }}
-                  >
-                    COPPER CREEK HOMES
-                  </motion.h3>
-                  <p className="text-gray-600 text-lg italic">
-                    Expert craftsmanship tailored for Copper Creek's distinctive architectural style
+              
+            </div>
+
+            {/* Desktop Layout - Services List Only */}
+            <div className="hidden lg:block">
+              <motion.div className="space-y-0" variants={itemVariants}>
+                {/* Instruction Message */}
+                <div className="mb-8">
+                  <p className="text-gray-500 text-sm italic">
+                    Hover over each service below to see examples of our work
                   </p>
                 </div>
+                
+                {services.map((service, index) => (
+                  <div key={index} className="group">
+                    <div 
+                      className="py-6 transition-colors duration-300 hover:bg-gray-50 rounded-lg px-4 cursor-pointer"
+                      onMouseEnter={() => {
+                        setCurrentImageIndex(index);
+                        setIsHovered(true);
+                      }}
+                      onMouseLeave={() => setIsHovered(false)}
+                    >
+                      <h4 className="text-xl font-semibold text-gray-700 group-hover:text-black transition-colors duration-300 mb-2">
+                        {service.title}
+                      </h4>
+                      {index < services.length - 1 && (
+                        <div className="w-full h-px bg-gray-300 mt-4"></div>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </motion.div>
             </div>
 
-            {/* Services List */}
-            <motion.div className="space-y-0" variants={itemVariants}>
-              {/* Instruction Message */}
-              <div className="mb-8">
-                <p className="text-gray-500 text-sm italic">
-                  Hover over each service below to see examples of our work
-                </p>
-              </div>
-              
-              {services.map((service, index) => (
-                <div key={index} className="group">
-                  <div 
-                    className="py-6 transition-colors duration-300 hover:bg-gray-50 rounded-lg px-4"
-                    onMouseEnter={() => setCurrentImageIndex(index)}
+        {/* Mobile Layout - Carousel Style */}
+        <div className="lg:hidden">
+          <motion.div className="space-y-6" variants={itemVariants}>
+            {/* Instruction Message */}
+            <div className="text-center mb-8">
+              <p className="text-gray-500 text-sm italic">
+                Our services automatically rotate below
+              </p>
+            </div>
+            
+            {/* Mobile Carousel */}
+            <div className="text-center">
+              <motion.div
+                className="relative h-[300px] rounded-lg overflow-hidden shadow-lg mb-6"
+              >
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentImageIndex}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="absolute inset-0"
                   >
-                    <h4 className="text-xl font-semibold text-gray-700 group-hover:text-black transition-colors duration-300 mb-2">
-                      {service.title}
-                    </h4>
-                    {index < services.length - 1 && (
-                      <div className="w-full h-px bg-gray-300 mt-4"></div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </motion.div>
+                    <Image
+                      src={services[currentImageIndex].image}
+                      alt={services[currentImageIndex].title}
+                      fill
+                      className="object-cover"
+                      sizes="100vw"
+                      priority={currentImageIndex === 0}
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </motion.div>
+              
+              {/* Current Service Title */}
+              <h4 className="text-xl font-semibold text-gray-700 mb-2">
+                {services[currentImageIndex].title}
+              </h4>
+              
+              {/* Dots Indicator */}
+              <div className="flex justify-center space-x-2 mt-4">
+                {services.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                      index === currentImageIndex ? 'bg-blue-600' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
           </motion.div>
         </motion.div>
       </div>

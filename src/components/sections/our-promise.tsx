@@ -52,7 +52,7 @@ export function OurPromise() {
           variants={itemVariants}
         >
           <p>
-            We've been at this for twenty-plus years now. Long enough to know that promises in this business 
+            We've been at this for thirty-five-plus years now. Long enough to know that promises in this business 
             are like campaign speeches—everybody makes them, not everybody keeps them.
           </p>
           

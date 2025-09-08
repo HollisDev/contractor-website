@@ -11,7 +11,7 @@ const leftNavigation = [
   { name: 'About Us', href: '#about-us' },
   { name: 'Services', href: '#our-services' },
   { name: 'Before & After', href: '#before-after' },
-  { name: 'Our Process', href: '#process-timeline' },
+  { name: 'Get Started', href: '#get-started' },
 ];
 
 const rightNavigation = [
@@ -63,18 +63,23 @@ export function Navbar() {
             </div>
 
             {/* Center Logo - Centered with maximum space */}
-            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 text-center">
-              <div className="flex flex-col items-center ">
+            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
+              <div className="flex items-center gap-2">
                 <Image
-                  src="/image-assets/nav-bar/measuring-tape.png"
-                  alt="Measuring Tape"
-                  width={380}
-                  height={105}
-                  className="mb-1 -mt-1 -ml-3" 
+                  src="/image-assets/nav-bar/reputation-builders-logo.png"
+                  alt="Reputation Builders Logo"
+                  width={98}
+                  height={75}
+                  className="flex-shrink-0" 
                   priority
                 />
-                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight font-bold -mt-4 mb-1 whitespace-nowrap">
-                  Reputation Builders
+                <div className="flex flex-col justify-center text-left">
+                  <div className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl text-black leading-tight font-bold my-2 -mt-1">
+                    Reputation
+                  </div>
+                  <div className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl text-black leading-tight font-bold -mt-1" style={{ marginTop: '1px' }}>
+                    Builders
+                  </div>
                 </div>
               </div>
             </Link>
@@ -100,7 +105,7 @@ export function Navbar() {
               <Link
                 href="#contact"
                 className={cn(
-                  'border-2 border-black text-black px-6 py-2 text-lg font-medium hover:bg-black hover:text-white transition-colors shadow-lg rounded-md',
+                  'border-2 border-black text-black px-6 py-2 text-lg font-medium hover:bg-gray-200 hover:text-black transition-all duration-200 shadow-lg rounded-md',
                   pathname === '#contact' && 'bg-black text-white'
                 )}
               >

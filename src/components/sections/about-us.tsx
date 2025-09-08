@@ -80,7 +80,7 @@ export function AboutUs() {
               whileHover={{ y: -5 }}
             >
               <p className="text-gray-800 text-lg leading-relaxed font-medium">
-                With over 20 years of experience, Reputation Builders transforms Central Valley-area homes into deeply personal, beautifully livable spaces. Our full-service team guides you seamlessly from first sketch to final reveal, so you can enjoy the process as much as the outcome.
+                With over 35 years of experience, Reputation Builders transforms Central Valley-area homes into deeply personal, beautifully livable spaces. Our full-service team guides you seamlessly from first sketch to final reveal, so you can enjoy the process as much as the outcome.
               </p>
             </motion.div>
             

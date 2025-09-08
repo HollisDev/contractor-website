@@ -9,9 +9,9 @@ export function Footer() {
     { name: 'About Us', href: '#about-us' },
     { name: 'Services', href: '#our-services' },
     { name: 'Before & After', href: '#before-after' },
-    { name: 'Our Process', href: '#process-timeline' },
+    { name: 'Get Started', href: '#get-started' },
     { name: 'Gallery', href: '#project-gallery' },
-    { name: 'Why Choose Us', href: '#why-choose-us' },
+    { name: 'Choose Us', href: '#why-choose-us' },
     { name: 'Our Promise', href: '#our-promise' },
     { name: 'Contact Us', href: '#contact' },
   ];
@@ -28,7 +28,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-gray-300 mb-8 leading-relaxed max-w-2xl text-lg mx-auto md:mx-0">
-              For over two decades, we've been transforming homes throughout Modesto with 
+              For over three decades, we've been transforming homes throughout Modesto with 
               expert craftsmanship and unmatched attention to detail. Your vision, our expertise.
             </p>
             <div className="text-gray-300">

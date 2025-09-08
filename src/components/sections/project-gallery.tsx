@@ -287,17 +287,6 @@ export function ProjectGallery() {
           viewport={{ once: true, amount: 0.1 }}
           variants={containerVariants}
         >
-          <motion.button
-            className="inline-flex items-center border-2 border-black text-black px-10 py-4 text-xl font-bold hover:bg-gray-800 hover:text-white transition-colors rounded-lg shadow-lg cursor-default"
-            variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View More Projects
-            <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </motion.button>
         </motion.div>
 
         {/* Stats Section */}
@@ -309,7 +298,7 @@ export function ProjectGallery() {
           variants={containerVariants}
         >
           <motion.div className="text-center" variants={itemVariants}>
-            <div className="text-4xl lg:text-5xl font-bold text-black mb-2">150+</div>
+            <div className="text-4xl lg:text-5xl font-bold text-black mb-2">500+</div>
             <div className="text-gray-600 font-medium">Projects Completed</div>
           </motion.div>
           <motion.div className="text-center" variants={itemVariants}>
@@ -317,7 +306,7 @@ export function ProjectGallery() {
             <div className="text-gray-600 font-medium">Client Satisfaction</div>
           </motion.div>
           <motion.div className="text-center" variants={itemVariants}>
-            <div className="text-4xl lg:text-5xl font-bold text-black mb-2">20+</div>
+            <div className="text-4xl lg:text-5xl font-bold text-black mb-2">35+</div>
             <div className="text-gray-600 font-medium">Years Experience</div>
           </motion.div>
           <motion.div className="text-center" variants={itemVariants}>

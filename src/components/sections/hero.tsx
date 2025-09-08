@@ -76,7 +76,8 @@ export function Hero() {
               <div className="mb-8">
                 <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
                   <span className="block text-white text-center">
-                    {renderWaveText('Transform Your ', 0)}
+                    {renderWaveText('Transform ', 0)}
+                    <span className="text-white-400">{renderWaveText('Your ', 0)}</span>
                   </span>
                   <span className="block text-white drop-shadow-md text-center">
                     {renderWaveText('Dream Space', 0, true)}

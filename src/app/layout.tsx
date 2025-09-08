@@ -2,10 +2,10 @@ import { Footer } from '@/components/layout/footer';
 import { Navbar } from '@/components/layout/navbar';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
-import { Inter } from 'next/font/google';
+import { Roboto_Condensed } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ 
+const robotoCondensed = Roboto_Condensed({ 
   subsets: ['latin'],
   display: 'swap',
   preload: true,
@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={robotoCondensed.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
