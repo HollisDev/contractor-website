@@ -1,6 +1,6 @@
-# Reputation Builders & Handyman Services - Website Specifications
+# Reputation Builders - Website Specifications
 
-A professional contractor website built with modern web technologies, featuring interactive components, smooth animations, and a sophisticated design system.
+A professional contractor website built with modern web technologies, featuring interactive components, smooth animations, and a sophisticated design system. I built this for my next-door neighbor named Ron to help his business.
 
 ## 🏗️ Project Overview
 
