@@ -32,7 +32,7 @@ export function GetStarted() {
   };
 
   return (
-    <section id="get-started" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+  <section id="get-started" className="py-20 bg-gradient-to-b from-gray-50 to-white" style={{ scrollMarginTop: '128px' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
