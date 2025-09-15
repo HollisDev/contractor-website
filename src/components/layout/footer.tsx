@@ -60,6 +60,9 @@ export function Footer() {
             <div className="text-gray-400 text-lg mb-4 md:mb-0">
               <p>&copy; {currentYear} Reputation Builders. All rights reserved.</p>
             </div>
+            <div className="text-white text-lg mb-4 md:mb-0">
+              <p>Built by H.J.B.</p>
+            </div>
             <div className="text-gray-300 text-lg">
               <p>Licensed • Bonded • Insured</p>
               <p className="text-sm mt-2">Ron Coin General Contractor CSLB Lic.# 910334</p>
